@@ -7612,6 +7612,12 @@ figure {
   .breadcrumb-summary.for-template-info {
     max-width: 520px;
   }
+  .wcu-image-block {
+    display: none;
+  }
+  .wcu-wrapper {
+    grid-template-columns: 1fr;
+  }
 
   .breadcrumb-summary.for-practice {
     max-width: 600px;
