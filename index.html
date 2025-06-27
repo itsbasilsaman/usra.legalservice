@@ -268,12 +268,13 @@
     .lang-toggle {
       display: flex;
       align-items: center;
+      justify-content: center; /* Center horizontally */
       background: #fff;
       border-radius: 2rem;
       border: 2px solid #D83D96;
       padding: 0.25rem 0.5rem;
       position: relative;
-      min-width: 80px;
+      width: 120px; /* Increased width for better fit */
       height: 45px;
       cursor: pointer;
       transition: border 0.2s;
@@ -288,6 +289,9 @@
     }
     .lang-toggle .lang-ar,
     .lang-toggle .lang-en {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center text in span */
       padding: 0 0.75rem;
       color: #D83D96;
       font-weight: 700;
@@ -303,8 +307,11 @@
       position: absolute;
       top: 4px;
       left: 3px;
-      width: 70px;
-      height: 34px;
+      width: 54px; /* Increased width for better fit */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
       background: #D83D96;
       border-radius: 2rem;
       transition: left 0.3s cubic-bezier(0.4,0,0.2,1);
@@ -320,15 +327,15 @@
     .lang-toggle .lang-en {
       transition: color 0.3s;
     }
-    @media (max-width: 600px) {
-      .lang-toggle {
-        min-width: 90px;
-        font-size: 0.95rem;
-        height: 32px;
-      }
-      .lang-toggle .lang-toggle-slider {
-        height: 26px;
-      }
+    
+    /* Show icon on desktop, hide logo */
+    .nav-logo-icon { display: inline-block; }
+    .nav-logo-full { display: none; }
+
+    @media (max-width: 1023px) {
+      /* On tablet/mobile: show logo, hide icon */
+      .nav-logo-icon { display: none !important; }
+      .nav-logo-full { display: inline-block !important; }
     }
   </style>
 </head>
@@ -340,14 +347,16 @@
         <div class="container w-container">
           <div data-animation="over-left" data-collapse="medium" data-duration="400" data-easing="ease"
             data-easing2="ease" data-doc-height="1" role="banner" class="navbar-container w-nav">
-            <div class="navbar-wrapper"><a href="index.html" class="navbar-brand w-nav-brand"><img loading="lazy"
-                  src="/img/usra-icon.png" alt="Brand Logo"
-                  class="nav-logo"></a>
+            <div class="navbar-wrapper"><a href="index.html" class="navbar-brand w-nav-brand">
+              <img loading="lazy"  src="/img/usra-icon.png" alt="Brand Icon" class="nav-logo nav-logo-icon">
+              <img loading="lazy" style="width: 45px;" src="/img/usra-logo.png" alt="Brand Logo" class="nav-logo nav-logo-full">
+            </a>
               <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
                 <ul role="list" class="nav-menu-list-wrapper w-list-unstyled">
-                  <li class="mobile-brand"><a href="index.html" class="navbar-brand w-nav-brand"><img
-                        loading="lazy" src="/img/usra-icon.png"
-                        alt="Brand Logo" class="nav-logo"></a></li>
+                  <li class="mobile-brand"><a href="index.html" class="navbar-brand w-nav-brand">
+                    <img loading="lazy" src="/img/usra-icon.png" alt="Brand Icon" class="nav-logo nav-logo-icon">
+                    <img loading="lazy" style="width: 45px;" src="/img/usra-logo.png" alt="Brand Logo" class="nav-logo nav-logo-full">
+                  </a></li>
                         <li class="nav-list-item"><a href="index.html" aria-current="page"
                           class="nav-link-block w-inline-block w--current">
                           <div class="nav-text">Home
@@ -385,10 +394,7 @@
                     </div>
                   </a></div>
               </nav>
-              <div class="header-button-wrapper" style="display: flex; align-items: center; gap: 1rem;">
-                <!-- Language Toggle Start -->
-                
-                <!-- Language Toggle End -->
+              <div class="header-button-wrapper" style="display: flex; align-items: center; gap: 0.25rem;">
                 <a href="contact.html" class="header-button w-inline-block">
                   <div class="button-text-block for-header secondary-bg">
                     <div class="button-text">Download App</div>
@@ -400,10 +406,14 @@
                       </svg></div>
                   </div>
                 </a>
-              </div>
-              <div class="menu-button menu-button-two w-nav-button">
-                <span class="menu-icon"><i class="fas fa-bars"></i></span>
-                <span class="menu-close-icon"><i class="fas fa-xmark"></i></span>
+                <div id="lang-toggle" class="lang-toggle" aria-label="Language Switcher" tabindex="0">
+                  <span class="lang-ar active">  العربية</span>
+                  <span class="lang-toggle-slider"></span>
+                  <span class="lang-en">En</span>
+                </div>
+                <div class="menu-button menu-button-two w-nav-button" >
+                  <i class="fa-solid fa-bars" style="font-size: 28px;"></i>
+                </div>
               </div>
             </div>
           </div>

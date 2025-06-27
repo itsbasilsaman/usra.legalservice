@@ -41,15 +41,17 @@
         <div class="container w-container">
           <div data-animation="over-left" data-collapse="medium" data-duration="400" data-easing="ease"
             data-easing2="ease" data-doc-height="1" role="banner" class="navbar-container w-nav">
-            <div class="navbar-wrapper"><a href="index.html" class="navbar-brand w-nav-brand"><img loading="lazy"
-                  src="/img/usra-icon.png" alt="Brand Logo"
-                  class="nav-logo"></a>
+            <div class="navbar-wrapper"><a href="index.html" class="navbar-brand w-nav-brand">
+              <img loading="lazy"  src="/img/usra-icon.png" alt="Brand Icon" class="nav-logo nav-logo-icon">
+              <img loading="lazy" style="width: 45px;" src="/img/usra-logo.png" alt="Brand Logo" class="nav-logo nav-logo-full">
+            </a>
               <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
                 <ul role="list" class="nav-menu-list-wrapper w-list-unstyled">
-                  <li class="mobile-brand"><a href="index.html" class="navbar-brand w-nav-brand"><img
-                        loading="lazy" src="673da037c557f00f71d570d7/673dbed2c995970c95682d4e_main-logo.png"
-                        alt="Brand Logo" class="nav-logo"></a></li>
-                        <li class="nav-list-item"><a href="about.html" aria-current="page"
+                  <li class="mobile-brand"><a href="index.html" class="navbar-brand w-nav-brand">
+                    <img loading="lazy" src="/img/usra-icon.png" alt="Brand Icon" class="nav-logo nav-logo-icon">
+                    <img loading="lazy" style="width: 45px;" src="/img/usra-logo.png" alt="Brand Logo" class="nav-logo nav-logo-full">
+                  </a></li>
+                        <li class="nav-list-item"><a href="index.html" aria-current="page"
                           class="nav-link-block w-inline-block w--current">
                           <div class="nav-text">Home
                             </div>
@@ -86,7 +88,8 @@
                     </div>
                   </a></div>
               </nav>
-              <div class="header-button-wrapper"><a href="contact.html" class="header-button w-inline-block">
+              <div class="header-button-wrapper" style="display: flex; align-items: center; gap: 0.25rem;">
+                <a href="contact.html" class="header-button w-inline-block">
                   <div class="button-text-block for-header secondary-bg">
                     <div class="button-text">Download App</div>
                     <div class="secondary-button-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 10 18"
@@ -96,9 +99,15 @@
                           fill="currentColor"></path>
                       </svg></div>
                   </div>
-                </a></div>
-              <div class="menu-button w-nav-button">
-                <div class="w-icon-nav-menu"></div>
+                </a>
+                <div id="lang-toggle" class="lang-toggle" aria-label="Language Switcher" tabindex="0">
+                  <span class="lang-ar active">  العربية</span>
+                  <span class="lang-toggle-slider"></span>
+                  <span class="lang-en">En</span>
+                </div>
+                <div class="menu-button menu-button-two w-nav-button" >
+                  <i class="fa-solid fa-bars" style="font-size: 28px;"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -509,12 +518,30 @@
                           d="M9.52447 0.463524C9.67415 0.00286901 10.3259 0.00287008 10.4755 0.463525L12.3574 6.25532C12.4243 6.46133 12.6163 6.60081 12.8329 6.60081H18.9228C19.4071 6.60081 19.6085 7.22062 19.2167 7.50532L14.2899 11.0848C14.1146 11.2122 14.0413 11.4379 14.1082 11.6439L15.9901 17.4357C16.1398 17.8963 15.6125 18.2794 15.2207 17.9947L10.2939 14.4152C10.1186 14.2878 9.88135 14.2878 9.70611 14.4152L4.77931 17.9947C4.38745 18.2794 3.86021 17.8963 4.00989 17.4357L5.89176 11.6439C5.9587 11.4379 5.88537 11.2122 5.71012 11.0848L0.783326 7.50532C0.39147 7.22062 0.592859 6.60081 1.07722 6.60081H7.16708C7.38369 6.60081 7.57567 6.46133 7.6426 6.25532L9.52447 0.463524Z"
                           fill="currentColor"></path>
                       </svg></div>
+                    <div class="single-star w-embed"><svg width="100%" height="100%" viewbox="0 0 20 19" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M9.52447 0.463524C9.67415 0.00286901 10.3259 0.00287008 10.4755 0.463525L12.3574 6.25532C12.4243 6.46133 12.6163 6.60081 12.8329 6.60081H18.9228C19.4071 6.60081 19.6085 7.22062 19.2167 7.50532L14.2899 11.0848C14.1146 11.2122 14.0413 11.4379 14.1082 11.6439L15.9901 17.4357C16.1398 17.8963 15.6125 18.2794 15.2207 17.9947L10.2939 14.4152C10.1186 14.2878 9.88135 14.2878 9.70611 14.4152L4.77931 17.9947C4.38745 18.2794 3.86021 17.8963 4.00989 17.4357L5.89176 11.6439C5.9587 11.4379 5.88537 11.2122 5.71012 11.0848L0.783326 7.50532C0.39147 7.22062 0.592859 6.60081 1.07722 6.60081H7.16708C7.38369 6.60081 7.57567 6.46133 7.6426 6.25532L9.52447 0.463524Z"
+                          fill="currentColor"></path>
+                      </svg></div>
+                    <div class="single-star w-embed"><svg width="100%" height="100%" viewbox="0 0 20 19" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M9.52447 0.463524C9.67415 0.00286901 10.3259 0.00287008 10.4755 0.463525L12.3574 6.25532C12.4243 6.46133 12.6163 6.60081 12.8329 6.60081H18.9228C19.4071 6.60081 19.6085 7.22062 19.2167 7.50532L14.2899 11.0848C14.1146 11.2122 14.0413 11.4379 14.1082 11.6439L15.9901 17.4357C16.1398 17.8963 15.6125 18.2794 15.2207 17.9947L10.2939 14.4152C10.1186 14.2878 9.88135 14.2878 9.70611 14.4152L4.77931 17.9947C4.38745 18.2794 3.86021 17.8963 4.00989 17.4357L5.89176 11.6439C5.9587 11.4379 5.88537 11.2122 5.71012 11.0848L0.783326 7.50532C0.39147 7.22062 0.592859 6.60081 1.07722 6.60081H7.16708C7.38369 6.60081 7.57567 6.46133 7.6426 6.25532L9.52447 0.463524Z"
+                          fill="currentColor"></path>
+                      </svg></div>
                   </div>
                   <div class="testimonial-statistics-title">User Privacy & Satisfaction</div>
                 </div>
                 <div class="testimonial-statistics-block">
                   <div class="testimonial-statistics-value">4.9</div>
                   <div class="rating-block">
+                    <div class="single-star w-embed"><svg width="100%" height="100%" viewbox="0 0 20 19" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M9.52447 0.463524C9.67415 0.00286901 10.3259 0.00287008 10.4755 0.463525L12.3574 6.25532C12.4243 6.46133 12.6163 6.60081 12.8329 6.60081H18.9228C19.4071 6.60081 19.6085 7.22062 19.2167 7.50532L14.2899 11.0848C14.1146 11.2122 14.0413 11.4379 14.1082 11.6439L15.9901 17.4357C16.1398 17.8963 15.6125 18.2794 15.2207 17.9947L10.2939 14.4152C10.1186 14.2878 9.88135 14.2878 9.70611 14.4152L4.77931 17.9947C4.38745 18.2794 3.86021 17.8963 4.00989 17.4357L5.89176 11.6439C5.9587 11.4379 5.88537 11.2122 5.71012 11.0848L0.783326 7.50532C0.39147 7.22062 0.592859 6.60081 1.07722 6.60081H7.16708C7.38369 6.60081 7.57567 6.46133 7.6426 6.25532L9.52447 0.463524Z"
+                          fill="currentColor"></path>
+                      </svg></div>
                     <div class="single-star w-embed"><svg width="100%" height="100%" viewbox="0 0 20 19" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
