@@ -107,8 +107,51 @@
       z-index: 10;
     }
     
-    /* Override any responsive hiding for menu button on desktop */
-    @media (min-width: 768px) {
+    /* Hide menu button on desktop (full screen view) */
+    @media (min-width: 1024px) {
+      .menu-button-two {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+      
+      .menu-close-icon {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+      }
+      
+      .menu-close-icon.active {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+      }
+    }
+    
+    /* Show menu button on tablet and mobile */
+    @media (max-width: 1023px) {
+      .menu-button-two {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+      }
+      
+      .menu-close-icon {
+        display: block !important;
+        visibility: visible !important;
+      }
+      
+      .menu-close-icon.active {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+    }
+    
+    /* Override any responsive hiding for menu button on mobile and tablet */
+    @media (min-width: 768px) and (max-width: 1023px) {
       .menu-button-two {
         display: block !important;
         visibility: visible !important;
@@ -127,16 +170,8 @@
       }
     }
     
-    /* Additional desktop styles */
-    @media (min-width: 1024px) {
-      .menu-button-two {
-        display: block !important;
-        visibility: visible !important;
-      }
-    }
-    
-    /* Make close icon more prominent on desktop */
-    @media (min-width: 768px) {
+    /* Make close icon more prominent on tablet */
+    @media (min-width: 768px) and (max-width: 1023px) {
       .menu-close-icon svg {
         width: 28px !important;
         height: 28px !important;
@@ -148,12 +183,22 @@
       }
     }
     
-    /* Ensure menu button is always clickable */
+    /* Ensure menu button is always clickable on mobile and tablet */
     .menu-button-two.w-nav-button {
       display: block !important;
       visibility: visible !important;
       opacity: 1 !important;
       pointer-events: auto !important;
+    }
+    
+    /* Hide menu button on desktop */
+    @media (min-width: 1024px) {
+      .menu-button-two.w-nav-button {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
     }
     
     .custom-download-btns {
@@ -228,60 +273,44 @@
     <header class="header transparent">
       <div class="main-header">
         <div class="container w-container">
-          <div data-animation="over-right" data-collapse="all" data-duration="400" data-easing="ease"
+          <div data-animation="over-left" data-collapse="medium" data-duration="400" data-easing="ease"
             data-easing2="ease" data-doc-height="1" role="banner" class="navbar-container w-nav">
-            <div class="navbar-wrapper-two">
-              <div class="menu-button-two w-nav-button">
-                <div class="menu-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 32 33" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_10320_7757)">
-                      <path
-                        d="M-0.00012207 5.63916C-0.00012207 5.37395 0.105235 5.11959 0.292772 4.93205C0.480309 4.74452 0.734664 4.63916 0.999881 4.63916H31C31.2652 4.63916 31.5195 4.74452 31.7071 4.93205C31.8946 5.11959 32 5.37395 32 5.63916C32 5.90438 31.8946 6.15873 31.7071 6.34627C31.5195 6.53381 31.2652 6.63917 31 6.63917H0.999881C0.734664 6.63917 0.480309 6.53381 0.292772 6.34627C0.105235 6.15873 -0.00012207 5.90438 -0.00012207 5.63916ZM-0.00012207 15.6392C-0.00012207 15.374 0.105235 15.1196 0.292772 14.9321C0.480309 14.7445 0.734664 14.6392 0.999881 14.6392H31C31.2652 14.6392 31.5195 14.7445 31.7071 14.9321C31.8946 15.1196 32 15.374 32 15.6392C32 15.9044 31.8946 16.1588 31.7071 16.3463C31.5195 16.5338 31.2652 16.6392 31 16.6392H0.999881C0.734664 16.6392 0.480309 16.5338 0.292772 16.3463C0.105235 16.1588 -0.00012207 15.9044 -0.00012207 15.6392ZM0.999881 24.6392C0.734664 24.6392 0.480309 24.7446 0.292772 24.9321C0.105235 25.1196 -0.00012207 25.374 -0.00012207 25.6392C-0.00012207 25.9044 0.105235 26.1588 0.292772 26.3463C0.480309 26.5339 0.734664 26.6392 0.999881 26.6392H31C31.2652 26.6392 31.5195 26.5339 31.7071 26.3463C31.8946 26.1588 32 25.9044 32 25.6392C32 25.374 31.8946 25.1196 31.7071 24.9321C31.5195 24.7446 31.2652 24.6392 31 24.6392H0.999881Z"
-                        fill="currentColor"></path>
-                    </g>
-                    <defs>
-                      <clippath id="clip0_10320_7757">
-                        <rect width="32" height="32" fill="currentColor" transform="translate(0 0.439453)"></rect>
-                      </clippath>
-                    </defs>
-                  </svg></div>
-                <div class="menu-close-icon w-embed" style="display: none;"><svg width="100%" height="100%" viewbox="0 0 32 32" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M24 8L8 24M8 8L24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg></div>
-              </div>
-              <nav role="navigation" class="nav-menu-wrapper-two w-nav-menu">
-                <ul role="list" class="nav-menu-list-wrapper-two w-list-unstyled">
-                  <li class="nav-list-item-two for-dropdown">
-                    <div data-delay="0" data-hover="false" class="nav-dropdown w-dropdown">
-                      <div class="nav-dropdown-toggle-two w-dropdown-toggle">
-                        <div class="nav-dropdown-inner-toggle">
-                          <div class="nav-text">Home</div>
-                          <div class="nav-icon w-embed"> </div>
+            <div class="navbar-wrapper"><a href="index.html" class="navbar-brand w-nav-brand"><img loading="lazy"
+                  src="/img/usra-icon.png" alt="Brand Logo"
+                  class="nav-logo"></a>
+              <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+                <ul role="list" class="nav-menu-list-wrapper w-list-unstyled">
+                  <li class="mobile-brand"><a href="index.html" class="navbar-brand w-nav-brand"><img
+                        loading="lazy" src="/img/usra-icon.png"
+                        alt="Brand Logo" class="nav-logo"></a></li>
+                        <li class="nav-list-item"><a href="index.html" aria-current="page"
+                          class="nav-link-block w-inline-block w--current">
+                          <div class="nav-text">Home
+                            </div>
+                        </a></li>
+                  <li class="nav-list-item"><a href="about.html" aria-current="page"
+                      class="nav-link-block w-inline-block w--current">
+                      <div class="nav-text">About Us
                         </div>
-                      </div>
-                      
-                    </div>
-                  </li>
-                  <li class="nav-list-item-two"><a href="../about.html" class="nav-link-block w-inline-block">
-                      <div class="nav-text">About Us</div>
                     </a></li>
-                  <li class="nav-list-item-two"><a href="service.html" class="nav-link-block w-inline-block">
-                      <div class="nav-text">Services</div>
+                  <li class="nav-list-item"><a href="service.html" class="nav-link-block w-inline-block">
+                      <div class="nav-text">Services
+                        </div>
                     </a></li>
-                  <li class="nav-list-item-two"><a href="features.html" class="nav-link-block w-inline-block">
-                      <div class="nav-text">Features</div>
+                  <li class="nav-list-item"><a href="features.html" class="nav-link-block w-inline-block">
+                      <div class="nav-text">Features
+                        </div>
                     </a></li>
-                    <li class="nav-list-item-two"><a href="contact.html" class="nav-link-block w-inline-block">
-                      <div class="nav-text">Contact</div>
+                    <li class="nav-list-item"><a href="contact.html" class="nav-link-block w-inline-block">
+                      <div class="nav-text">Contact
+                        </div>
                     </a></li>
-
-                  
+                 
                 </ul>
-                <div class="offcanvas-header-button-wrapper"><a href="../contact.html"
+                <div class="offcanvas-header-button-wrapper"><a href="contact.html"
                     class="header-button w-inline-block">
                     <div class="button-text-block for-header secondary-bg">
-                      <div class="button-text">Contact Us</div>
+                      <div class="button-text">Download App</div>
                       <div class="secondary-button-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 10 18"
                           fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
@@ -290,10 +319,8 @@
                         </svg></div>
                     </div>
                   </a></div>
-              </nav><a href="index.html" aria-current="page" class="navbar-brand w-nav-brand w--current"><img
-                  loading="lazy" src="/img/usra-icon.png"
-                  alt="Brand Logo" class="nav-logo"></a>
-              <div class="header-button-wrapper"><a href="../contact.html" class="header-button w-inline-block">
+              </nav>
+              <div class="header-button-wrapper"><a href="contact.html" class="header-button w-inline-block">
                   <div class="button-text-block for-header secondary-bg">
                     <div class="button-text">Download App</div>
                     <div class="secondary-button-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 10 18"
@@ -304,6 +331,10 @@
                       </svg></div>
                   </div>
                 </a></div>
+              <div class="menu-button menu-button-two w-nav-button">
+                <span class="menu-icon"><i class="fas fa-bars"></i></span>
+                <span class="menu-close-icon"><i class="fas fa-xmark"></i></span>
+              </div>
             </div>
           </div>
         </div>
@@ -313,23 +344,20 @@
 
     <main class="main-wrapper">
       <section data-w-id="72c2717f-b09e-d221-cb70-ec897a63a5f7" class="hero-section with-pattern">
-        <div class="our-orientation-text-block">
-          <div class="our-orientation-text">Legality</div>
-        </div>
+        
         <div class="w-layout-blockcontainer container w-container">
           <div class="hero-wrapper-two">
             <div id="w-node-cd54af70-d959-7777-539e-2ef2bd1e9bda-b0ddf12c" class="hero-content for-hero-two">
               <div class="global-animation-wrapper">
                 <h1 data-w-id="dd732fba-d508-734e-aca9-8563608a0ca7"
                   style="-webkit-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-moz-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-ms-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);opacity:0;filter:blur(2px)"
-                  class="section-title for-hero-two">Strategic Legal <span
-                    class="section-title-highlight for-hero">Counsel</span> for All Your Needs</h1>
+                  class="section-title for-hero-two">Legal Empowerment <span
+                    class="section-title-highlight for-hero">for Women</h1>
               </div>
               <div class="global-animation-wrapper">
                 <p data-w-id="17c3814b-7305-6f8a-1fa3-f3e1b6befac0"
                   style="-webkit-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-moz-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-ms-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);opacity:0;filter:blur(2px)"
-                  class="hero-summary-two">Whether you need advice on complex legal matters or representation in
-                  high-stakes cases, we're here to guide you every step of the way. Your success is our priority.</p>
+                  class="hero-summary-two">Your private legal companion for personal and family matters. Usra connects women to trusted Saudi legal experts, ensuring privacy, respect, and empowerment at every step.</p>
               </div>
               <div class="hero-button-wrapper for-hero-two global-animation-wrapper">
                 <!-- Custom Download Buttons Start -->
@@ -366,11 +394,11 @@
                 <div class="hero-scroll-down-text">Scroll Down</div>
               </a>
             </div>
-            <div data-w-id="e364a7d5-5d71-1e17-4ce1-08445a7385fc" style="opacity:0" class="hero-image-block-two"><img
-                src="../673da037c557f00f71d570d7/675a9d4d14863e0a69aafd57_hero-image-2.png" loading="lazy"
+            <div data-w-id="e364a7d5-5d71-1e17-4ce1-08445a7385fc" style="opacity:0; " class="hero-image-block-two"><img
+                src="./img/banner-three.png" loading="lazy"
+                style="border-radius: 25px;"
                 sizes="(max-width: 479px) 98vw, (max-width: 767px) 96vw, (max-width: 991px) 287.5px, (max-width: 1279px) 387.5px, (max-width: 1439px) 498.75px, 551.25px"
-                srcset="../673da037c557f00f71d570d7/675a9d4d14863e0a69aafd57_hero-image-2-p-500.png 500w, ../673da037c557f00f71d570d7/675a9d4d14863e0a69aafd57_hero-image-2.png 594w"
-                alt="Hero Image" class="hero-image"></div>
+                 alt="Hero Image" class="hero-image main-image "></div>
           </div>
         </div>
       </section>
@@ -380,71 +408,198 @@
           <div class="work-highlight-inner-wrapper">
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Corporate Law</div>
+              <div class="work-highlight-text">Private Audio/Video Consultations</div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Family Law</div>
+              <div class="work-highlight-text">Family & Personal Legal Services</div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Criminal Law</div>
+              <div class="work-highlight-text">Emergency Legal Help</div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Employment Law</div>
+              <div class="work-highlight-text">Legal Document Preparation</div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Real Estate Law</div>
-            </div>
-          </div>
-          <div class="work-highlight-inner-wrapper">
-            <div class="work-highlight-block">
-              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Corporate Law</div>
-            </div>
-            <div class="work-highlight-block">
-              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Family Law</div>
-            </div>
-            <div class="work-highlight-block">
-              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Criminal Law</div>
-            </div>
-            <div class="work-highlight-block">
-              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Employment Law</div>
-            </div>
-            <div class="work-highlight-block">
-              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Real Estate Law</div>
+              <div class="work-highlight-text">Case Management Dashboard</div>
             </div>
           </div>
           <div class="work-highlight-inner-wrapper">
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Corporate Law</div>
+              <div class="work-highlight-text">Anonymous Legal Advice</div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Family Law</div>
+              <div class="work-highlight-text">Women's Rights Awareness</div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Criminal Law</div>
+              <div class="work-highlight-text">Culturally Respectful Design</div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Employment Law</div>
+              <div class="work-highlight-text">About Usra: Women-centric Legal App</div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Real Estate Law</div>
+              <div class="work-highlight-text">Empowerment, Justice & Dignity</div>
+            </div>
+          </div>
+          <div class="work-highlight-inner-wrapper">
+            <div class="work-highlight-block">
+              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
+              <div class="work-highlight-text">Confidential Legal Support</div>
+            </div>
+            <div class="work-highlight-block">
+              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
+              <div class="work-highlight-text">Expert Saudi Consultants</div>
+            </div>
+            <div class="work-highlight-block">
+              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
+              <div class="work-highlight-text">Flexible & Secure Access</div>
+            </div>
+            <div class="work-highlight-block">
+              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
+              <div class="work-highlight-text">Bilingual Legal Documents</div>
+            </div>
+            <div class="work-highlight-block">
+              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
+              <div class="work-highlight-text">Know & Defend Your Rights</div>
             </div>
           </div>
         </div>
       </section>
+
+       <!-- Animated Counter Section Start -->
+       <section class="usra-counter-section section-gap-y-axis" id="usraCounterSection">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="usra-counter-wrapper">
+            <div class="usra-counter-item">
+              <div class="usra-counter-number" data-target="150">1</div>
+              <div class="usra-counter-label">Successful Cases</div>
+            </div>
+            <div class="usra-counter-item">
+              <div class="usra-counter-number" data-target="120">1</div>
+              <div class="usra-counter-label">Satisfied Clients</div>
+            </div>
+            <div class="usra-counter-item">
+              <div class="usra-counter-number" data-target="18">1</div>
+              <div class="usra-counter-label">Lawyer Associates</div>
+            </div>
+            <div class="usra-counter-item">
+              <div class="usra-counter-number" data-target="50">1</div>
+              <div class="usra-counter-label">Money Saved for Clients (M+)</div>
+            </div>
+          </div>
+        </div>
+        <style>
+          .usra-counter-section {
+            background: #f2f2f2;
+            padding: 20px 0 20px 0;
+          }
+          .usra-counter-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+          }
+          .usra-counter-item {
+            flex: 1 1 200px;
+            min-width: 200px;
+            text-align: center;
+            margin-bottom: 20px;
+          }
+          .usra-counter-number {
+            font-family: var(--font-family--secondary, 'Playfair Display', serif);
+            font-size: 64px;
+            font-weight: 700;
+            color: #D83D96;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+          }
+          .usra-counter-label {
+            font-size: 22px;
+            color: #607080;
+            font-family: var(--font-family--primary, 'Quicksand', sans-serif);
+            margin-top: 10px;
+          }
+          @media (max-width: 768px) {
+            .usra-counter-wrapper {
+              flex-direction: column;
+              gap: 24px;
+            }
+            .usra-counter-item {
+              min-width: 0;
+            }
+          }
+          @media (max-width: 600px) {
+            .usra-counter-wrapper {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: 1fr 1fr;
+              gap: 24px;
+              max-width: 400px;
+              margin: 0 auto;
+            }
+            .usra-counter-item {
+              min-width: 0;
+              margin-bottom: 0;
+              padding: 12px 0;
+            }
+            .usra-counter-section {
+              padding: 36px 0 24px 0;
+            }
+            .usra-counter-label {
+              font-size: 18px;
+            }
+          }
+        </style>
+        <script>
+          // Counter animation on scroll into view
+          document.addEventListener('DOMContentLoaded', function() {
+            var counters = document.querySelectorAll('.usra-counter-number');
+            var started = false;
+            function animateCounter(counter) {
+              var target = +counter.getAttribute('data-target');
+              var current = 1;
+              var increment = Math.ceil(target / 60); // ~1s duration
+              function update() {
+                if (current < target) {
+                  current += increment;
+                  if (current > target) current = target;
+                  counter.textContent = current + (target >= 1000000 ? 'M' : '');
+                  requestAnimationFrame(update);
+                } else {
+                  counter.textContent = target + (target >= 1000000 ? 'M' : '') + '+';
+                }
+              }
+              update();
+            }
+            function handleScroll() {
+              var section = document.getElementById('usraCounterSection');
+              var rect = section.getBoundingClientRect();
+              if (!started && rect.top < window.innerHeight && rect.bottom > 0) {
+                counters.forEach(function(counter) {
+                  animateCounter(counter);
+                });
+                started = true;
+                window.removeEventListener('scroll', handleScroll);
+              }
+            }
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // in case already in view
+          });
+        </script>
+      </section>
+      <!-- Animated Counter Section End -->
       <section class="about-section section-gap-y-axis">
         <div class="w-layout-blockcontainer container w-container">
           <div class="section-title-wrapper text-center-with-flex-column gap-bottom">
@@ -457,20 +612,19 @@
                     <circle cx="7.5" cy="7.5" r="7" stroke="currentColor"></circle>
                     <circle cx="7.5" cy="7.5" r="3.5" fill="currentColor"></circle>
                   </svg></div>
-                <div class="section-subtitle">About Us</div>
+                <div class="section-subtitle">About Usra</div>
               </div>
             </div>
             <div class="global-animation-wrapper">
               <h2 data-w-id="46913b99-6425-bb6b-e178-8bf8eaa5da62"
                 style="-webkit-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-moz-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-ms-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);opacity:0;filter:blur(2px)"
-                class="section-title for-about gap-bottom-15">Your Trusted <span
-                  class="section-title-highlight">Advocates</span> in the Legal Landscape</h2>
+                class="section-title for-about gap-bottom-15">Usra: <span
+                  class="section-title-highlight">Your Legal Ally</span> for Women in KSA</h2>
             </div>
             <div class="global-animation-wrapper">
               <p data-w-id="46913b99-6425-bb6b-e178-8bf8eaa5da67"
                 style="-webkit-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-moz-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-ms-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);opacity:0;filter:blur(2px)"
-                class="section-summary for-about">At Legality, we are more than just legal advisors—we are your partners
-                in navigating the complexities of the law. Our firm is built on a foundation.</p>
+                class="section-summary for-about">Usra is a private legal app for women in Saudi Arabia, offering secure, respectful, and user-friendly help for personal and family matters. Connect with expert legal consultants and manage your cases privately.</p>
             </div>
           </div>
           <div class="about-wrapper-two">
@@ -610,14 +764,14 @@
                       <circle cx="7.5" cy="7.5" r="7" stroke="currentColor"></circle>
                       <circle cx="7.5" cy="7.5" r="3.5" fill="currentColor"></circle>
                     </svg></div>
-                  <div class="section-subtitle">Practice Area</div>
+                  <div class="section-subtitle">Usra Services</div>
                 </div>
               </div>
               <div data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710a6"
                 style="-webkit-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-moz-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-ms-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);opacity:0;filter:blur(2px)"
                 class="global-animation-wrapper">
-                <h2 class="section-title for-practice">Comprehensive Legal <span
-                    class="section-title-highlight">Services</span> Tailored to Your Needs</h2>
+                <h2 class="section-title for-practice">Trusted Legal Support for <span
+                    class="section-title-highlight">Women in Saudi Arabia</span></h2>
               </div>
             </div>
             <div data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710ac"
@@ -625,7 +779,7 @@
               class="button-wrapper align-end"><a data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710ad"
                 href="../practice.html" class="button-default white-bg w-inline-block">
                 <div class="button-text-block secondary-bg">
-                  <div class="button-text">View all Areas</div>
+                  <div class="button-text">Explore All Services</div>
                   <div class="secondary-button-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 10 18"
                       fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -644,13 +798,11 @@
                   <div class="practice-content"><a href="../practice/criminal-defense.html"
                       class="practice-title-link-block w-inline-block">
                       <div class="practice-title-order-block">01</div>
-                      <h3 aria-label="Practice Title Link" class="practice-title">Criminal Defense</h3>
+                      <h3 aria-label="Practice Title Link" class="practice-title">Emergency Legal Help</h3>
                     </a>
-                    <p class="practice-summary">With a strong commitment to justice, our criminal defense team works
-                      tirelessly to defend your rights and secure the best possible outcome in cases ranging from
-                      misdemeanors to serious felonies.</p><a data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710bb"
+                    <p class="practice-summary">Instant access to a legal expert during crises such as domestic abuse, threats, or harassment. Usra prioritizes your safety, day or night.</p><a data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710bb"
                       href="../practice/criminal-defense.html" class="our-link-block hide w-inline-block">
-                      <div class="our-lin-text">Read More</div>
+                      <div class="our-lin-text">Emergency Help</div>
                       <div
                         style="-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
                         class="our-link-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 14 12" fill="none"
@@ -662,8 +814,8 @@
                     </a>
                   </div><a aria-label="Practice Image Link" href="../practice/criminal-defense.html"
                     class="practice-image-link-block w-inline-block"><img
-                      src="../6746a74caf85e6e0a4a468f7/6746aecf2aaa201fbcac0e0c_criminal-defense.jpg" loading="lazy"
-                      alt="Criminal Defense" class="practice-image"></a>
+                      src="https://www.commisceo-global.com/images/easyblog_articles/1861/saudi-women-niqab-in-cinema.jpg" loading="lazy"
+                      alt="Emergency Legal Help" class="practice-image"></a>
                 </div>
               </div>
               <div data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710b4"
@@ -675,12 +827,10 @@
                       <div class="practice-title-order-block">02</div>
                       <h3 aria-label="Practice Title Link" class="practice-title">Family Law</h3>
                     </a>
-                    <p class="practice-summary">Our compassionate approach to family law matters ensures that your
-                      rights and interests are protected during sensitive issues such as divorce, child custody, and
-                      estate planning. We have the knowledge and experience to guide you.</p><a
+                    <p class="practice-summary">Confidential legal help for marriage, divorce, khula, custody, or inheritance. Usra provides full guidance with cultural understanding and privacy.</p><a
                       data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710bb" href="../practice/family-law.html"
                       class="our-link-block hide w-inline-block">
-                      <div class="our-lin-text">Read More</div>
+                      <div class="our-lin-text">Family Law</div>
                       <div
                         style="-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
                         class="our-link-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 14 12" fill="none"
@@ -692,7 +842,7 @@
                     </a>
                   </div><a aria-label="Practice Image Link" href="../practice/family-law.html"
                     class="practice-image-link-block w-inline-block"><img
-                      src="../6746a74caf85e6e0a4a468f7/6746ae882bf34eb9d83bafde_family-law.jpg" loading="lazy"
+                      src="https://ichef.bbci.co.uk/news/976/cpsprodpb/494D/production/_104356781_mediaitem104356780.jpg" loading="lazy"
                       alt="Family Law" class="practice-image"></a>
                 </div>
               </div>
@@ -703,11 +853,9 @@
                   <div class="practice-content"><a href="../practice/corporate-law.html"
                       class="practice-title-link-block w-inline-block">
                       <div class="practice-title-order-block">03</div>
-                      <h3 aria-label="Practice Title Link" class="practice-title">Corporate Law</h3>
+                      <h3 aria-label="Practice Title Link" class="practice-title">Legal Document Help</h3>
                     </a>
-                    <p class="practice-summary">We provide strategic advice and legal services for businesses of all
-                      sizes, from startups to established corporations. Our expertise includes mergers and acquisitions,
-                      contract negotiations, and corporate governance.</p><a
+                    <p class="practice-summary">Get support for preparing, reviewing, and submitting legal documents — all through the app. Usra makes paperwork easier and safer for women.</p><a
                       data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710bb" href="../practice/corporate-law.html"
                       class="our-link-block hide w-inline-block">
                       <div class="our-lin-text">Read More</div>
@@ -722,8 +870,8 @@
                     </a>
                   </div><a aria-label="Practice Image Link" href="../practice/corporate-law.html"
                     class="practice-image-link-block w-inline-block"><img
-                      src="../6746a74caf85e6e0a4a468f7/6746ae4e8fbb4801eedc8fab_corporate-law.jpg" loading="lazy"
-                      alt="Corporate Law" class="practice-image"></a>
+                      src="https://www.arabianbusiness.com/cloud/2023/06/02/Saudisation.jpg" loading="lazy"
+                      alt="Legal Document Help" class="practice-image"></a>
                 </div>
               </div>
             </div>
@@ -745,16 +893,16 @@
               </div>
             </div>
             <div class="global-animation-wrapper">
-              <h2 class="section-title for-wcu">Expert Legal <span
-                  class="section-title-highlight">Solutions</span> with Client-Centered Focus</h2>
+              <h2 class="section-title for-wcu">Empowering <span
+                  class="section-title-highlight">Women's Rights</span> with Usra's Legal App</h2>
             </div>
           </div>
           <div class="wcu-wrapper">
             <div class="wcu-image-block"><img
-                src="../673da037c557f00f71d570d7/67503410ab7b5070a6e79ab4_wcu-image.png" loading="lazy" alt="WCU Image"
+                src="./img/banner-two.png" loading="lazy" alt="WCU Image"
                 class="wcu-image"></div>
             <div class="wcu-feature-wrapper">
-              <div class="wcu-feature-item">
+              <div class="wcu-feature-item-one">
                 <div class="wcu-feature-icon-block">
                   <div class="wcu-feature-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
                       height="100%" viewbox="0 0 32 32" fill="none">
@@ -770,7 +918,7 @@
                     concerns</p>
                 </div>
               </div>
-              <div class="wcu-feature-item">
+              <div class="wcu-feature-item-one">
                 <div class="wcu-feature-icon-block">
                   <div class="wcu-feature-icon secondary-text w-embed"><svg xmlns="http://www.w3.org/2000/svg"
                       width="100%" height="100%" viewbox="0 0 32 32" fill="none">
@@ -786,7 +934,7 @@
                     expert.</p>
                 </div>
               </div>
-              <div class="wcu-feature-item">
+              <div class="wcu-feature-item-one">
                 <div class="wcu-feature-icon-block">
                   <div class="wcu-feature-icon secondary-text w-embed"><svg xmlns="http://www.w3.org/2000/svg"
                       width="100%" height="100%" viewbox="0 0 32 32" fill="none">
@@ -851,109 +999,8 @@
           </div>
         </div>
       </section>
-      <section class="case-study-section section-gap-y-axis">
-        <div class="w-layout-blockcontainer container w-container">
-          <div class="section-title-wrapper flex-space-between gap-bottom">
-            <div class="section-title-block">
-              <div class="global-animation-wrapper">
-                <div data-w-id="efcc6eb6-772a-61e8-16f2-cba5fb8ccd5c"
-                  style="-webkit-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-moz-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-ms-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);opacity:0;filter:blur(2px)"
-                  class="section-subtitle-block gap-bottom-25">
-                  <div class="section-subtitle-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="15"
-                      height="15" viewbox="0 0 15 15" fill="none">
-                      <circle cx="7.5" cy="7.5" r="7" stroke="currentColor"></circle>
-                      <circle cx="7.5" cy="7.5" r="3.5" fill="currentColor"></circle>
-                    </svg></div>
-                  <div class="section-subtitle">Case Study</div>
-                </div>
-              </div>
-              <div class="global-animation-wrapper">
-                <h2 data-w-id="efcc6eb6-772a-61e8-16f2-cba5fb8ccd60"
-                  style="-webkit-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-moz-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-ms-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);opacity:0;filter:blur(2px)"
-                  class="section-title common-maxwidth">Real <span class="section-title-highlight">Success
-                    Stories</span> from Our Legal Practice</h2>
-              </div>
-            </div>
-            <div data-w-id="efcc6eb6-772a-61e8-16f2-cba5fb8ccd65"
-              style="-webkit-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-moz-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-ms-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);opacity:0;filter:blur(2px)"
-              class="button-wrapper align-end global-animation-wrapper"><a
-                data-w-id="efcc6eb6-772a-61e8-16f2-cba5fb8ccd66" href="../case-study.html"
-                class="button-default w-inline-block">
-                <div class="button-text-block">
-                  <div class="button-text">Download App</div>
-                  <div class="button-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 10 18" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M9.76383 8.43925L1.27781 0.213913C1.13622 0.0766001 0.948105 -3.95671e-07 0.752482 -4.04222e-07C0.55686 -4.12773e-07 0.368745 0.0766 0.227151 0.213913L0.218014 0.223207C0.149135 0.289774 0.0942879 0.3699 0.0568085 0.45871C0.019329 0.547521 9.25561e-07 0.643159 9.21336e-07 0.739808C9.17112e-07 0.836457 0.019329 0.932095 0.0568084 1.02091C0.0942878 1.10972 0.149135 1.18984 0.218014 1.25641L8.20915 9.00155L0.218013 16.7436C0.149134 16.8102 0.0942871 16.8903 0.0568077 16.9791C0.0193283 17.0679 2.03432e-07 17.1635 1.99207e-07 17.2602C1.94983e-07 17.3568 0.0193283 17.4525 0.0568077 17.5413C0.0942871 17.6301 0.149134 17.7102 0.218013 17.7768L0.22715 17.7861C0.368744 17.9234 0.556859 18 0.752482 18C0.948104 18 1.13622 17.9234 1.27781 17.7861L9.76383 9.56075C9.83846 9.48841 9.89787 9.40141 9.93847 9.30502C9.97907 9.20863 10 9.10486 10 9C10 8.89513 9.97907 8.79136 9.93847 8.69497C9.89787 8.59859 9.83846 8.51159 9.76383 8.43925Z"
-                        fill="currentColor"></path>
-                    </svg></div>
-                </div>
-              </a></div>
-          </div>
-          <div data-w-id="dce7e858-ef21-c07b-2069-603e138e21b1"
-            style="-webkit-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-moz-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-ms-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);opacity:0;filter:blur(2px)"
-            class="case-study-collection-list-wrapper w-dyn-list">
-            <div role="list" class="case-study-collection-list w-dyn-items">
-              <div role="listitem" class="case-study-collection-items w-dyn-item">
-                <div class="case-study-block"><a aria-label="Case Study Image Link"
-                    href="../case-study/securing-a-favorable-merger-for-innovatetech-solutions.html"
-                    class="case-study-image-link-block w-inline-block"><img
-                      src="../6746a74caf85e6e0a4a468f7/675130e6dccdf016b98a1b74_securing-a-favorable-merger-for-innovate-tech-solutions.jpg"
-                      loading="lazy" alt="Securing a Favorable Merger for Innovate Tech Solutions"
-                      sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 350px, (max-width: 1279px) 465px, (max-width: 1439px) 570px, 630px"
-                      srcset="../6746a74caf85e6e0a4a468f7/675130e6dccdf016b98a1b74_securing-a-favorable-merger-for-innovate-tech-solutions-p-500.jpg 500w, ../6746a74caf85e6e0a4a468f7/675130e6dccdf016b98a1b74_securing-a-favorable-merger-for-innovate-tech-solutions.jpg 630w"
-                      class="case-study-image"></a>
-                  <div class="case-study-content"><a aria-label="Case Study Title Link"
-                      href="../case-study/securing-a-favorable-merger-for-innovatetech-solutions.html"
-                      class="case-study-title-link-block w-inline-block">
-                      <h3 class="case-study-title">Securing a Favorable Merger for Innovate Tech Solutions</h3>
-                    </a><a data-w-id="15ce3e3d-8c4f-1d99-92f2-305cbe0b0b1b"
-                      href="../case-study/securing-a-favorable-merger-for-innovatetech-solutions.html"
-                      class="our-link-block w-inline-block">
-                      <div class="our-lin-text">Read More</div>
-                      <div
-                        style="-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                        class="our-link-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 14 12" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M7.32967 11.3615C7.2784 11.3102 7.23773 11.2492 7.20998 11.1822C7.18223 11.1151 7.16795 11.0433 7.16795 10.9707C7.16795 10.8981 7.18223 10.8262 7.20998 10.7592C7.23773 10.6921 7.2784 10.6312 7.32967 10.5799L11.3516 6.55224L0.551413 6.55224C0.405169 6.55224 0.264914 6.49405 0.161504 6.39048C0.0580938 6.2869 -2.47837e-07 6.14642 -2.41434e-07 5.99994C-2.35031e-07 5.85345 0.0580938 5.71297 0.161505 5.6094C0.264914 5.50582 0.405169 5.44763 0.551413 5.44763L11.3516 5.44763L7.32967 1.41993C7.2262 1.3163 7.16808 1.17574 7.16808 1.02918C7.16808 0.882614 7.2262 0.742054 7.32967 0.638419C7.43314 0.534784 7.57347 0.476562 7.7198 0.476562C7.86612 0.476562 8.00646 0.534784 8.10992 0.638419L13.0727 5.60918C13.1239 5.66047 13.1646 5.72139 13.1923 5.78844C13.2201 5.85548 13.2344 5.92735 13.2344 5.99994C13.2344 6.07252 13.2201 6.14439 13.1923 6.21144C13.1646 6.27849 13.1239 6.3394 13.0727 6.39069L8.10992 11.3615C8.05871 11.4128 7.9979 11.4535 7.93096 11.4813C7.86402 11.5091 7.79226 11.5234 7.7198 11.5234C7.64733 11.5234 7.57558 11.5091 7.50864 11.4813C7.4417 11.4535 7.38088 11.4128 7.32967 11.3615Z"
-                            fill="currentColor"></path>
-                        </svg></div>
-                    </a></div>
-                </div>
-              </div>
-              <div role="listitem" class="case-study-collection-items w-dyn-item">
-                <div class="case-study-block"><a aria-label="Case Study Image Link"
-                    href="../case-study/achieving-custody-rights-in-a-high-conflict-divorce.html"
-                    class="case-study-image-link-block w-inline-block"><img
-                      src="../6746a74caf85e6e0a4a468f7/675130202c232c83ba066b59_achieving-custody-rights-in-a-high-conflict-divorce.jpg"
-                      loading="lazy" alt="Achieving Custody Rights in a High-Conflict Divorce"
-                      sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 350px, (max-width: 1279px) 465px, (max-width: 1439px) 570px, 630px"
-                      srcset="../6746a74caf85e6e0a4a468f7/675130202c232c83ba066b59_achieving-custody-rights-in-a-high-conflict-divorce-p-500.jpg 500w, ../6746a74caf85e6e0a4a468f7/675130202c232c83ba066b59_achieving-custody-rights-in-a-high-conflict-divorce.jpg 630w"
-                      class="case-study-image"></a>
-                  <div class="case-study-content"><a aria-label="Case Study Title Link"
-                      href="../case-study/achieving-custody-rights-in-a-high-conflict-divorce.html"
-                      class="case-study-title-link-block w-inline-block">
-                      <h3 class="case-study-title">Achieving Custody Rights in a High-Conflict Divorce</h3>
-                    </a><a data-w-id="15ce3e3d-8c4f-1d99-92f2-305cbe0b0b1b"
-                      href="../case-study/achieving-custody-rights-in-a-high-conflict-divorce.html"
-                      class="our-link-block w-inline-block">
-                      <div class="our-lin-text">Read More</div>
-                      <div
-                        style="-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                        class="our-link-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 14 12" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M7.32967 11.3615C7.2784 11.3102 7.23773 11.2492 7.20998 11.1822C7.18223 11.1151 7.16795 11.0433 7.16795 10.9707C7.16795 10.8981 7.18223 10.8262 7.20998 10.7592C7.23773 10.6921 7.2784 10.6312 7.32967 10.5799L11.3516 6.55224L0.551413 6.55224C0.405169 6.55224 0.264914 6.49405 0.161504 6.39048C0.0580938 6.2869 -2.47837e-07 6.14642 -2.41434e-07 5.99994C-2.35031e-07 5.85345 0.0580938 5.71297 0.161505 5.6094C0.264914 5.50582 0.405169 5.44763 0.551413 5.44763L11.3516 5.44763L7.32967 1.41993C7.2262 1.3163 7.16808 1.17574 7.16808 1.02918C7.16808 0.882614 7.2262 0.742054 7.32967 0.638419C7.43314 0.534784 7.57347 0.476562 7.7198 0.476562C7.86612 0.476562 8.00646 0.534784 8.10992 0.638419L13.0727 5.60918C13.1239 5.66047 13.1646 5.72139 13.1923 5.78844C13.2201 5.85548 13.2344 5.92735 13.2344 5.99994C13.2344 6.07252 13.2201 6.14439 13.1923 6.21144C13.1646 6.27849 13.1239 6.3394 13.0727 6.39069L8.10992 11.3615C8.05871 11.4128 7.9979 11.4535 7.93096 11.4813C7.86402 11.5091 7.79226 11.5234 7.7198 11.5234C7.64733 11.5234 7.57558 11.5091 7.50864 11.4813C7.4417 11.4535 7.38088 11.4128 7.32967 11.3615Z"
-                            fill="currentColor"></path>
-                        </svg></div>
-                    </a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     
+     
     </main>
     <footer class="footer section-gap-top">
       <div class="w-layout-blockcontainer container w-container">
@@ -965,7 +1012,7 @@
             <p class="footer-address">Empowering Women with Expert Legal Guidance in Saudi Arabia</p>
           </div>
           <div class="newsletter-main-wrapper">
-            <h2 class="newsletter-title">Subscribe to our newsletter</h2>
+            <h2 class="newsletter-title">Stay Updated with Usra</h2>
             <div class="newsletter-form-block w-form">
               <form id="wf-newsletter-form" name="wf-form-Newsletter-Form" data-name="Newsletter Form" method="get"
                 class="newsletter-form" data-wf-page-id="67552aa51ab7c8348d591cb8"
