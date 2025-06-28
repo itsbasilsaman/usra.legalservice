@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Sun Dec 22 2024 11:49:55 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="legality-template.webflow.io" data-wf-page="674ee4b14a121e41b0ddf12c"
-  data-wf-site="673da037c557f00f71d570d7" lang="en">
+  data-wf-site="673da037c557f00f71d570d7" lang="ar">
 
 <head>
   <meta charset="utf-8">
@@ -38,305 +38,7 @@
   <link href="./img/usra-logo.png" rel="apple-touch-icon">
   <!-- Custom Download Buttons CSS -->
   <style>
-    /* Fixed Header Styles */
-    .header.transparent {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: #D83F97;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      border-bottom: 1px solid white;
-    }
-    
-    /* Add padding to body to prevent content from hiding behind fixed header */
-    body {
-      padding-top: 80px; /* Adjust this value based on your header height */
-    }
-    
-    /* Ensure main content starts below the fixed header */
-    .main-wrapper {
-      position: relative;
-      z-index: 1;
-    }
-    
-    /* Menu Close Icon Styles */
-    .menu-close-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: all 0.3s ease;
-      opacity: 0;
-      pointer-events: none;
-    }
-    
-    .menu-button-two {
-      position: relative;
-      cursor: pointer;
-      /* Ensure menu button is visible on all screen sizes */
-      display: block !important;
-      visibility: visible !important;
-    }
-    
-    .menu-icon, .menu-close-icon {
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    
-    .menu-close-icon.active {
-      opacity: 1 !important;
-      pointer-events: auto;
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-    
-    .menu-icon.active {
-      opacity: 0 !important;
-      transform: rotate(-90deg);
-    }
-    
-    /* Force display when active */
-    .menu-close-icon.active {
-      display: block !important;
-    }
-    
-    /* Ensure proper z-index */
-    .menu-close-icon {
-      z-index: 10;
-    }
-    
-    /* Hide menu button on desktop (full screen view) */
-    @media (min-width: 1024px) {
-      .menu-button-two {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-      }
-      
-      .menu-close-icon {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-      }
-      
-      .menu-close-icon.active {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-      }
-    }
-    
-    /* Show menu button on tablet and mobile */
-    @media (max-width: 1023px) {
-      .menu-button-two {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        pointer-events: auto !important;
-      }
-      
-      .menu-close-icon {
-        display: block !important;
-        visibility: visible !important;
-      }
-      
-      .menu-close-icon.active {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-    }
-    
-    /* Override any responsive hiding for menu button on mobile and tablet */
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .menu-button-two {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-      
-      .menu-close-icon {
-        display: block !important;
-        visibility: visible !important;
-      }
-      
-      .menu-close-icon.active {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-    }
-    
-    /* Make close icon more prominent on tablet */
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .menu-close-icon svg {
-        width: 28px !important;
-        height: 28px !important;
-      }
-      
-      .menu-close-icon.active svg {
-        width: 28px !important;
-        height: 28px !important;
-      }
-    }
-    
-    /* Ensure menu button is always clickable on mobile and tablet */
-    .menu-button-two.w-nav-button {
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      pointer-events: auto !important;
-    }
-    
-    /* Hide menu button on desktop */
-    @media (min-width: 1024px) {
-      .menu-button-two.w-nav-button {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-      }
-    }
-    
-    .custom-download-btns {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      width: 100%;
-      max-width: 660px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    @media (min-width: 640px) {
-      .custom-download-btns {
-        flex-direction: row;
-      }
-    }
-    .custom-btn {
-      flex: 1 1 0%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      padding: 1.2rem 1.5rem;
-      font-size: 1.125rem;
-      font-weight: 700;
-      border-radius: 3.5rem;
-      box-shadow: 0 4px 24px 0 rgba(216,61,150,0.10);
-      transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-      outline: none;
-      border: 2px solid #D83D96;
-      text-decoration: none;
-      margin: 0;
-      background: #fff;
-      color: #D83D96;
-      position: relative;
-      overflow: hidden;
-    }
-    .custom-btn:hover, .custom-btn:focus {
-      background: #D83D96;
-      color: #fff;
-      border-color: #ffffff;
-      box-shadow: 0 8px 32px 0 rgba(216,61,150,0.18);
-      transform: translateY(-2px) scale(1.03);
-    }
-    .custom-btn .btn-icon {
-      display: flex;
-      align-items: center;
-      font-size: 1.5rem;
-      margin-right: 0.25rem;
-      transition: transform 0.2s;
-    }
-    .custom-btn:hover .btn-icon, .custom-btn:focus .btn-icon {
-      transform: scale(1.15) rotate(-8deg);
-    }
-    .custom-btn .arrow-icon {
-      margin-left: 0.25rem;
-      transition: transform 0.2s;
-      display: flex;
-      align-items: center;
-    }
-    .custom-btn:hover .arrow-icon, .custom-btn:focus .arrow-icon {
-      transform: translateX(6px);
-    }
-    .lang-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center; /* Center horizontally */
-      background: #fff;
-      border-radius: 2rem;
-      border: 2px solid #D83D96;
-      padding: 0.25rem 0.5rem;
-      position: relative;
-      width: 120px; /* Increased width for better fit */
-      height: 45px;
-      cursor: pointer;
-      transition: border 0.2s;
-      box-shadow: 0 2px 10px 0 rgba(216,61,150,0.08);
-      font-family: inherit;
-      font-size: 1rem;
-      user-select: none;
-      outline: none;
-    }
-    .lang-toggle:focus {
-      border: 2px solid #b71c6b;
-    }
-    .lang-toggle .lang-ar,
-    .lang-toggle .lang-en {
-      display: flex;
-      align-items: center;
-      justify-content: center; /* Center text in span */
-      padding: 0 0.75rem;
-      color: #D83D96;
-      font-weight: 700;
-      z-index: 2;
-      transition: color 0.2s;
-      position: relative;
-    }
-    .lang-toggle .lang-ar.active,
-    .lang-toggle .lang-en.active {
-      color: #fff;
-    }
-    .lang-toggle .lang-toggle-slider {
-      position: absolute;
-      top: 4px;
-      left: 3px;
-      width: 54px; /* Increased width for better fit */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 35px;
-      background: #D83D96;
-      border-radius: 2rem;
-      transition: left 0.3s cubic-bezier(0.4,0,0.2,1);
-      z-index: 1;
-    }
-    .lang-toggle .lang-ar.active ~ .lang-toggle-slider {
-      left: 3px;
-    }
-    .lang-toggle .lang-en.active ~ .lang-toggle-slider {
-      left: calc(50% + 3px);
-    }
-    .lang-toggle .lang-ar,
-    .lang-toggle .lang-en {
-      transition: color 0.3s;
-    }
-    
-    /* Show icon on desktop, hide logo */
-    .nav-logo-icon { display: inline-block; }
-    .nav-logo-full { display: none; }
-
-    @media (max-width: 1023px) {
-      /* On tablet/mobile: show logo, hide icon */
-      .nav-logo-icon { display: none !important; }
-      .nav-logo-full { display: inline-block !important; }
-    }
+   
   </style>
 </head>
 
@@ -357,60 +59,75 @@
                     <img loading="lazy" src="/img/usra-icon.png" alt="Brand Icon" class="nav-logo nav-logo-icon">
                     <img loading="lazy" style="width: 45px;" src="/img/usra-logo.png" alt="Brand Logo" class="nav-logo nav-logo-full">
                   </a></li>
-                        <li class="nav-list-item"><a href="index.html" aria-current="page"
-                          class="nav-link-block w-inline-block w--current">
-                          <div class="nav-text">Home
-                            </div>
-                        </a></li>
+                  <li class="nav-list-item"><a href="index.html" aria-current="page"
+                    class="nav-link-block w-inline-block w--current">
+                    <div class="nav-text">
+                      <span data-ar>الرئيسية</span>
+                      <span data-en style="display:none">Home</span>
+                    </div>
+                  </a></li>
                   <li class="nav-list-item"><a href="about.html" aria-current="page"
                       class="nav-link-block w-inline-block w--current">
-                      <div class="nav-text">About Us
-                        </div>
+                      <div class="nav-text">
+                        <span data-ar>من نحن</span>
+                        <span data-en style="display:none">About Us</span>
+                      </div>
                     </a></li>
                   <li class="nav-list-item"><a href="service.html" class="nav-link-block w-inline-block">
-                      <div class="nav-text">Services
-                        </div>
+                      <div class="nav-text">
+                        <span data-ar>الخدمات</span>
+                        <span data-en style="display:none">Services</span>
+                      </div>
                     </a></li>
                   <li class="nav-list-item"><a href="features.html" class="nav-link-block w-inline-block">
-                      <div class="nav-text">Features
-                        </div>
+                      <div class="nav-text">
+                        <span data-ar>المميزات</span>
+                        <span data-en style="display:none">Features</span>
+                      </div>
                     </a></li>
                     <li class="nav-list-item"><a href="contact.html" class="nav-link-block w-inline-block">
-                      <div class="nav-text">Contact
-                        </div>
+                      <div class="nav-text">
+                        <span data-ar>تواصل معنا</span>
+                        <span data-en style="display:none">Contact</span>
+                      </div>
                     </a></li>
-                 
                 </ul>
                 <div class="offcanvas-header-button-wrapper"><a href="contact.html"
                     class="header-button w-inline-block">
                     <div class="button-text-block for-header secondary-bg">
-                      <div class="button-text">Download App</div>
+                      <div class="button-text">
+                        <span data-ar>تحميل التطبيق</span>
+                        <span data-en style="display:none">Download App</span>
+                      </div>
                       <div class="secondary-button-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 10 18"
                           fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M9.76383 8.43925L1.27781 0.213913C1.13622 0.0766001 0.948105 -3.95671e-07 0.752482 -4.04222e-07C0.55686 -4.12773e-07 0.368745 0.0766 0.227151 0.213913L0.218014 0.223207C0.149135 0.289774 0.0942879 0.3699 0.0568085 0.45871C0.019329 0.547521 9.25561e-07 0.643159 9.21336e-07 0.739808C9.17112e-07 0.836457 0.019329 0.932095 0.0568084 1.02091C0.0942878 1.10972 0.149135 1.18984 0.218014 1.25641L8.20915 9.00155L0.218013 16.7436C0.149134 16.8102 0.0942871 16.8903 0.0568077 16.9791C0.0193283 17.0679 2.03432e-07 17.1635 1.99207e-07 17.2602C1.94983e-07 17.3568 0.0193283 17.4525 0.0568077 17.5413C0.0942871 17.6301 0.149134 17.7102 0.218013 17.7768L0.22715 17.7861C0.368744 17.9234 0.556859 18 0.752482 18C0.948104 18 1.13622 17.9234 1.27781 17.7861L9.76383 9.56075C9.83846 9.48841 9.89787 9.40141 9.93847 9.30502C9.97907 9.20863 10 9.10486 10 9C10 8.89513 9.97907 8.79136 9.93847 8.69497C9.89787 8.59859 9.83846 8.51159 9.76383 8.43925Z"
                             fill="currentColor"></path>
-                        </svg></div>
+                      </svg></div>
                     </div>
                   </a></div>
               </nav>
               <div class="header-button-wrapper" style="display: flex; align-items: center; gap: 0.25rem;">
-                <a href="contact.html" class="header-button w-inline-block">
-                  <div class="button-text-block for-header secondary-bg">
-                    <div class="button-text">Download App</div>
-                    <div class="secondary-button-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 10 18"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.76383 8.43925L1.27781 0.213913C1.13622 0.0766001 0.948105 -3.95671e-07 0.752482 -4.04222e-07C0.55686 -4.12773e-07 0.368745 0.0766 0.227151 0.213913L0.218014 0.223207C0.149135 0.289774 0.0942879 0.3699 0.0568085 0.45871C0.019329 0.547521 9.25561e-07 0.643159 9.21336e-07 0.739808C9.17112e-07 0.836457 0.019329 0.932095 0.0568084 1.02091C0.0942878 1.10972 0.149135 1.18984 0.218014 1.25641L8.20915 9.00155L0.218013 16.7436C0.149134 16.8102 0.0942871 16.8903 0.0568077 16.9791C0.0193283 17.0679 2.03432e-07 17.1635 1.99207e-07 17.2602C1.94983e-07 17.3568 0.0193283 17.4525 0.0568077 17.5413C0.0942871 17.6301 0.149134 17.7102 0.218013 17.7768L0.22715 17.7861C0.368744 17.9234 0.556859 18 0.752482 18C0.948104 18 1.13622 17.9234 1.27781 17.7861L9.76383 9.56075C9.83846 9.48841 9.89787 9.40141 9.93847 9.30502C9.97907 9.20863 10 9.10486 10 9C10 8.89513 9.97907 8.79136 9.93847 8.69497C9.89787 8.59859 9.83846 8.51159 9.76383 8.43925Z"
-                          fill="currentColor"></path>
-                      </svg></div>
-                  </div>
-                </a>
                 <div id="lang-toggle" class="lang-toggle" aria-label="Language Switcher" tabindex="0">
                   <span class="lang-ar active">  العربية</span>
                   <span class="lang-toggle-slider"></span>
                   <span class="lang-en">En</span>
                 </div>
+                <a href="contact.html" class="header-button w-inline-block">
+                  <div class="button-text-block for-header secondary-bg">
+                    <div class="button-text">
+                      <span data-ar>تحميل التطبيق</span>
+                      <span data-en style="display:none">Download App</span>
+                    </div>
+                    <div class="secondary-button-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 10 18"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M9.76383 8.43925L1.27781 0.213913C1.13622 0.0766001 0.948105 -3.95671e-07 0.752482 -4.04222e-07C0.55686 -4.12773e-07 0.368745 0.0766 0.227151 0.213913L0.218014 0.223207C0.149135 0.289774 0.0942879 0.3699 0.0568085 0.45871C0.019329 0.547521 9.25561e-07 0.643159 9.21336e-07 0.739808C9.17112e-07 0.836457 0.019329 0.932095 0.0568084 1.02091C0.0942878 1.10972 0.149135 1.18984 0.218014 1.25641L8.20915 9.00155L0.218013 16.7436C0.149134 16.8102 0.0942871 16.8903 0.0568077 16.9791C0.0193283 17.0679 2.03432e-07 17.1635 1.99207e-07 17.2602C1.94983e-07 17.3568 0.0193283 17.4525 0.0568077 17.5413C0.0942871 17.6301 0.149134 17.7102 0.218013 17.7768L0.22715 17.7861C0.368744 17.9234 0.556859 18 0.752482 18C0.948104 18 1.13622 17.9234 1.27781 17.7861L9.76383 9.56075C9.83846 9.48841 9.89787 9.40141 9.93847 9.30502C9.97907 9.20863 10 9.10486 10 9C10 8.89513 9.97907 8.79136 9.93847 8.69497C9.89787 8.59859 9.83846 8.51159 9.76383 8.43925Z"
+                          fill="currentColor"></path>
+                    </svg></div>
+                  </div>
+                </a>
                 <div class="menu-button menu-button-two w-nav-button" >
                   <i class="fa-solid fa-bars" style="font-size: 28px;"></i>
                 </div>
@@ -431,13 +148,18 @@
               <div class="global-animation-wrapper">
                 <h1 data-w-id="dd732fba-d508-734e-aca9-8563608a0ca7"
                   style="-webkit-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-moz-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-ms-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);opacity:0;filter:blur(2px)"
-                  class="section-title for-hero-two">Legal Empowerment <span
-                    class="section-title-highlight for-hero">for Women</h1>
+                  class="section-title for-hero-two">
+                  <span data-ar>التمكين القانوني <span class="section-title-highlight for-hero">للمرأة</span></span>
+                  <span data-en style="display:none">Legal Empowerment <span class="section-title-highlight for-hero">for Women</span></span>
+                </h1>
               </div>
               <div class="global-animation-wrapper">
                 <p data-w-id="17c3814b-7305-6f8a-1fa3-f3e1b6befac0"
                   style="-webkit-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-moz-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-ms-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);opacity:0;filter:blur(2px)"
-                  class="hero-summary-two">Your private legal companion for personal and family matters. Usra connects women to trusted Saudi legal experts, ensuring privacy, respect, and empowerment at every step.</p>
+                  class="hero-summary-two">
+                  <span data-ar>رفيقتك القانونية الخاصة في القضايا الشخصية والأسرية. يربطك أسرة بخبيرات قانونيات سعوديات موثوقات، مع ضمان الخصوصية والاحترام والتمكين في كل خطوة.</span>
+                  <span data-en style="display:none">Your private legal companion for personal and family matters. Usra connects women to trusted Saudi legal experts, ensuring privacy, respect, and empowerment at every step.</span>
+                </p>
               </div>
               <div class="hero-button-wrapper for-hero-two global-animation-wrapper">
                 <!-- Custom Download Buttons Start -->
@@ -488,67 +210,112 @@
           <div class="work-highlight-inner-wrapper">
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Private Audio/Video Consultations</div>
+              <div class="work-highlight-text">
+                <span data-ar>استشارات صوتية وفيديو خاصة</span>
+                <span data-en style="display:none">Private Audio/Video Consultations</span>
+              </div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Family & Personal Legal Services</div>
+              <div class="work-highlight-text">
+                <span data-ar>خدمات قانونية أسرية وشخصية</span>
+                <span data-en style="display:none">Family & Personal Legal Services</span>
+              </div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Emergency Legal Help</div>
+              <div class="work-highlight-text">
+                <span data-ar>مساعدة قانونية طارئة</span>
+                <span data-en style="display:none">Emergency Legal Help</span>
+              </div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Legal Document Preparation</div>
+              <div class="work-highlight-text">
+                <span data-ar>إعداد المستندات القانونية</span>
+                <span data-en style="display:none">Legal Document Preparation</span>
+              </div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Case Management Dashboard</div>
-            </div>
-          </div>
-          <div class="work-highlight-inner-wrapper">
-            <div class="work-highlight-block">
-              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Anonymous Legal Advice</div>
-            </div>
-            <div class="work-highlight-block">
-              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Women's Rights Awareness</div>
-            </div>
-            <div class="work-highlight-block">
-              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Culturally Respectful Design</div>
-            </div>
-            <div class="work-highlight-block">
-              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">About Usra: Women-centric Legal App</div>
-            </div>
-            <div class="work-highlight-block">
-              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Empowerment, Justice & Dignity</div>
+              <div class="work-highlight-text">
+                <span data-ar>لوحة إدارة القضايا</span>
+                <span data-en style="display:none">Case Management Dashboard</span>
+              </div>
             </div>
           </div>
           <div class="work-highlight-inner-wrapper">
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Confidential Legal Support</div>
+              <div class="work-highlight-text">
+                <span data-ar>نصائح قانونية مجهولة الهوية</span>
+                <span data-en style="display:none">Anonymous Legal Advice</span>
+              </div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Expert Saudi Consultants</div>
+              <div class="work-highlight-text">
+                <span data-ar>التوعية بحقوق المرأة</span>
+                <span data-en style="display:none">Women's Rights Awareness</span>
+              </div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Flexible & Secure Access</div>
+              <div class="work-highlight-text">
+                <span data-ar>تصميم محترم ثقافياً</span>
+                <span data-en style="display:none">Culturally Respectful Design</span>
+              </div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Bilingual Legal Documents</div>
+              <div class="work-highlight-text">
+                <span data-ar>عن أسرة: تطبيق قانوني للمرأة</span>
+                <span data-en style="display:none">About Usra: Women-centric Legal App</span>
+              </div>
             </div>
             <div class="work-highlight-block">
               <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
-              <div class="work-highlight-text">Know & Defend Your Rights</div>
+              <div class="work-highlight-text">
+                <span data-ar>التمكين والعدالة والكرامة</span>
+                <span data-en style="display:none">Empowerment, Justice & Dignity</span>
+              </div>
+            </div>
+          </div>
+          <div class="work-highlight-inner-wrapper">
+            <div class="work-highlight-block">
+              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
+              <div class="work-highlight-text">
+                <span data-ar>دعم قانوني سري</span>
+                <span data-en style="display:none">Confidential Legal Support</span>
+              </div>
+            </div>
+            <div class="work-highlight-block">
+              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
+              <div class="work-highlight-text">
+                <span data-ar>مستشارات سعوديات خبيرات</span>
+                <span data-en style="display:none">Expert Saudi Consultants</span>
+              </div>
+            </div>
+            <div class="work-highlight-block">
+              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
+              <div class="work-highlight-text">
+                <span data-ar>وصول مرن وآمن</span>
+                <span data-en style="display:none">Flexible & Secure Access</span>
+              </div>
+            </div>
+            <div class="work-highlight-block">
+              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
+              <div class="work-highlight-text">
+                <span data-ar>مستندات قانونية ثنائية اللغة</span>
+                <span data-en style="display:none">Bilingual Legal Documents</span>
+              </div>
+            </div>
+            <div class="work-highlight-block">
+              <div class="work-highlight-icon w-embed"> <img src="./img/usra-logo.png" alt=""></div>
+              <div class="work-highlight-text">
+                <span data-ar>اعرفي حقوقك وادافعي عنها</span>
+                <span data-en style="display:none">Know & Defend Your Rights</span>
+              </div>
             </div>
           </div>
         </div>
@@ -560,19 +327,31 @@
           <div class="usra-counter-wrapper">
             <div class="usra-counter-item">
               <div class="usra-counter-number" data-target="150">1</div>
-              <div class="usra-counter-label">Successful Cases</div>
+              <div class="usra-counter-label">
+                <span data-ar>قضية ناجحة</span>
+                <span data-en style="display:none">Successful Cases</span>
+              </div>
             </div>
             <div class="usra-counter-item">
               <div class="usra-counter-number" data-target="120">1</div>
-              <div class="usra-counter-label">Satisfied Clients</div>
+              <div class="usra-counter-label">
+                <span data-ar>عميلة راضية</span>
+                <span data-en style="display:none">Satisfied Clients</span>
+              </div>
             </div>
             <div class="usra-counter-item">
               <div class="usra-counter-number" data-target="18">1</div>
-              <div class="usra-counter-label">Lawyer Associates</div>
+              <div class="usra-counter-label">
+                <span data-ar>محامية شريكة</span>
+                <span data-en style="display:none">Lawyer Associates</span>
+              </div>
             </div>
             <div class="usra-counter-item">
               <div class="usra-counter-number" data-target="50">1</div>
-              <div class="usra-counter-label">Money Saved for Clients (M+)</div>
+              <div class="usra-counter-label">
+                <span data-ar>مليون ريال وفرت للعملاء</span>
+                <span data-en style="display:none">Money Saved for Clients (M+)</span>
+              </div>
             </div>
           </div>
         </div>
@@ -692,14 +471,19 @@
                     <circle cx="7.5" cy="7.5" r="7" stroke="currentColor"></circle>
                     <circle cx="7.5" cy="7.5" r="3.5" fill="currentColor"></circle>
                   </svg></div>
-                <div class="section-subtitle">About Usra</div>
+                <div class="section-subtitle">
+                  <span data-ar>عن أسرة</span>
+                  <span data-en style="display:none">About Usra</span>
+                </div>
               </div>
             </div>
             <div class="global-animation-wrapper">
               <h2 data-w-id="46913b99-6425-bb6b-e178-8bf8eaa5da62"
                 style="-webkit-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-moz-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-ms-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);opacity:0;filter:blur(2px)"
-                class="section-title for-about gap-bottom-15">Usra: <span
-                  class="section-title-highlight">Your Legal Ally</span> for Women in KSA</h2>
+                class="section-title for-about gap-bottom-15">
+                <span data-ar>أسرة: <span class="section-title-highlight">حليفتك القانونية</span> للمرأة في المملكة</span>
+                <span data-en style="display:none">Usra: <span class="section-title-highlight">Your Legal Ally</span> for Women in KSA</span>
+              </h2>
             </div>
             <div class="global-animation-wrapper">
               <p data-w-id="46913b99-6425-bb6b-e178-8bf8eaa5da67"
@@ -844,14 +628,19 @@
                       <circle cx="7.5" cy="7.5" r="7" stroke="currentColor"></circle>
                       <circle cx="7.5" cy="7.5" r="3.5" fill="currentColor"></circle>
                     </svg></div>
-                  <div class="section-subtitle">Usra Services</div>
+                  <div class="section-subtitle">
+                    <span data-ar>خدمات أسرة</span>
+                    <span data-en style="display:none">Usra Services</span>
+                  </div>
                 </div>
               </div>
               <div data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710a6"
                 style="-webkit-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-moz-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);-ms-transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);transform:translate3d(0, 70px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-3deg) skew(0, 0);opacity:0;filter:blur(2px)"
                 class="global-animation-wrapper">
-                <h2 class="section-title for-practice">Trusted Legal Support for <span
-                    class="section-title-highlight">Women in Saudi Arabia</span></h2>
+                <h2 class="section-title for-practice">
+                  <span data-ar>دعم قانوني موثوق <span class="section-title-highlight">للمرأة في السعودية</span></span>
+                  <span data-en style="display:none">Trusted Legal Support for <span class="section-title-highlight">Women in Saudi Arabia</span></span>
+                </h2>
               </div>
             </div>
             <div data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710ac"
@@ -859,7 +648,10 @@
               class="button-wrapper align-end"><a data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710ad"
                 href="../practice.html" class="button-default white-bg w-inline-block">
                 <div class="button-text-block secondary-bg">
-                  <div class="button-text">Explore All Services</div>
+                  <div class="button-text">
+                    <span data-ar>استكشف جميع الخدمات</span>
+                    <span data-en style="display:none">Explore All Services</span>
+                  </div>
                   <div class="secondary-button-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 10 18"
                       fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -878,11 +670,20 @@
                   <div class="practice-content"><a href="../practice/criminal-defense.html"
                       class="practice-title-link-block w-inline-block">
                       <div class="practice-title-order-block">01</div>
-                      <h3 aria-label="Practice Title Link" class="practice-title">Emergency Legal Help</h3>
+                      <h3 aria-label="Practice Title Link" class="practice-title">
+                        <span data-ar>مساعدة قانونية طارئة</span>
+                        <span data-en style="display:none">Emergency Legal Help</span>
+                      </h3>
                     </a>
-                    <p class="practice-summary">Instant access to a legal expert during crises such as domestic abuse, threats, or harassment. Usra prioritizes your safety, day or night.</p><a data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710bb"
+                    <p class="practice-summary">
+                      <span data-ar>وصول فوري لخبيرة قانونية أثناء الأزمات مثل العنف الأسري أو التهديدات أو المضايقات. تعطي أسرة الأولوية لسلامتك، ليلاً أو نهاراً.</span>
+                      <span data-en style="display:none">Instant access to a legal expert during crises such as domestic abuse, threats, or harassment. Usra prioritizes your safety, day or night.</span>
+                    </p><a data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710bb"
                       href="../practice/criminal-defense.html" class="our-link-block hide w-inline-block">
-                      <div class="our-lin-text">Emergency Help</div>
+                      <div class="our-lin-text">
+                        <span data-ar>مساعدة طارئة</span>
+                        <span data-en style="display:none">Emergency Help</span>
+                      </div>
                       <div
                         style="-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
                         class="our-link-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 14 12" fill="none"
@@ -905,12 +706,21 @@
                   <div class="practice-content"><a href="../practice/family-law.html"
                       class="practice-title-link-block w-inline-block">
                       <div class="practice-title-order-block">02</div>
-                      <h3 aria-label="Practice Title Link" class="practice-title">Family Law</h3>
+                      <h3 aria-label="Practice Title Link" class="practice-title">
+                        <span data-ar>القانون الأسري</span>
+                        <span data-en style="display:none">Family Law</span>
+                      </h3>
                     </a>
-                    <p class="practice-summary">Confidential legal help for marriage, divorce, khula, custody, or inheritance. Usra provides full guidance with cultural understanding and privacy.</p><a
+                    <p class="practice-summary">
+                      <span data-ar>مساعدة قانونية سرية للزواج والطلاق والخُلع والحضانة أو الميراث. تقدم أسرة إرشاداً كاملاً مع الفهم الثقافي والخصوصية.</span>
+                      <span data-en style="display:none">Confidential legal help for marriage, divorce, khula, custody, or inheritance. Usra provides full guidance with cultural understanding and privacy.</span>
+                    </p><a
                       data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710bb" href="../practice/family-law.html"
                       class="our-link-block hide w-inline-block">
-                      <div class="our-lin-text">Family Law</div>
+                      <div class="our-lin-text">
+                        <span data-ar>القانون الأسري</span>
+                        <span data-en style="display:none">Family Law</span>
+                      </div>
                       <div
                         style="-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
                         class="our-link-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 14 12" fill="none"
@@ -933,12 +743,21 @@
                   <div class="practice-content"><a href="../practice/corporate-law.html"
                       class="practice-title-link-block w-inline-block">
                       <div class="practice-title-order-block">03</div>
-                      <h3 aria-label="Practice Title Link" class="practice-title">Legal Document Help</h3>
+                      <h3 aria-label="Practice Title Link" class="practice-title">
+                        <span data-ar>مساعدة المستندات القانونية</span>
+                        <span data-en style="display:none">Legal Document Help</span>
+                      </h3>
                     </a>
-                    <p class="practice-summary">Get support for preparing, reviewing, and submitting legal documents — all through the app. Usra makes paperwork easier and safer for women.</p><a
+                    <p class="practice-summary">
+                      <span data-ar>احصلي على دعم لإعداد ومراجعة وتقديم المستندات القانونية — كل ذلك من خلال التطبيق. تجعل أسرة الأعمال الورقية أسهل وأكثر أماناً للمرأة.</span>
+                      <span data-en style="display:none">Get support for preparing, reviewing, and submitting legal documents — all through the app. Usra makes paperwork easier and safer for women.</span>
+                    </p><a
                       data-w-id="07c79adc-d0b2-9851-0ea4-f9e54cb710bb" href="../practice/corporate-law.html"
                       class="our-link-block hide w-inline-block">
-                      <div class="our-lin-text">Read More</div>
+                      <div class="our-lin-text">
+                        <span data-ar>اقرأ المزيد</span>
+                        <span data-en style="display:none">Read More</span>
+                      </div>
                       <div
                         style="-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
                         class="our-link-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 14 12" fill="none"
@@ -969,12 +788,17 @@
                     <circle cx="7.5" cy="7.5" r="7" stroke="currentColor"></circle>
                     <circle cx="7.5" cy="7.5" r="3.5" fill="currentColor"></circle>
                   </svg></div>
-                <div class="section-subtitle">Why Choose Us</div>
+                <div class="section-subtitle">
+                  <span data-ar>لماذا تختارنا</span>
+                  <span data-en style="display:none">Why Choose Us</span>
+                </div>
               </div>
             </div>
             <div class="global-animation-wrapper">
-              <h2 class="section-title for-wcu">Empowering <span
-                  class="section-title-highlight">Women's Rights</span> with Usra's Legal App</h2>
+              <h2 class="section-title for-wcu">
+                <span data-ar>تمكين <span class="section-title-highlight">حقوق المرأة</span> مع تطبيق أسرة القانوني</span>
+                <span data-en style="display:none">Empowering <span class="section-title-highlight">Women's Rights</span> with Usra's Legal App</span>
+              </h2>
             </div>
           </div>
           <div class="wcu-wrapper">
@@ -992,10 +816,14 @@
                     </svg></div>
                 </div>
                 <div class="wcu-feature-content">
-                  <div class="wcu-feature-title">Client-Focused Approach</div>
-                  <p class="wcu-feature-summary">We put our clients at the center of everything we do. From our first
-                    consultation to the final resolution, we are dedicated to understand goals &amp; addressing your
-                    concerns</p>
+                  <div class="wcu-feature-title">
+                    <span data-ar>نهج يركز على العميلة</span>
+                    <span data-en style="display:none">Client-Focused Approach</span>
+                  </div>
+                  <p class="wcu-feature-summary">
+                    <span data-ar>نضع عملائنا في مركز كل ما نقوم به. من أول استشارة إلى الحل النهائي، نحن متخصصون في فهم الأهداف ومعالجة مخاوفك</span>
+                    <span data-en style="display:none">We put our clients at the center of everything we do. From our first consultation to the final resolution, we are dedicated to understand goals & addressing your concerns</span>
+                  </p>
                 </div>
               </div>
               <div class="wcu-feature-item-one">
@@ -1008,10 +836,14 @@
                     </svg></div>
                 </div>
                 <div class="wcu-feature-content">
-                  <div class="wcu-feature-title">Specialized Team</div>
-                  <p class="wcu-feature-summary">Our attorneys bring decades of combined experience across multiple
-                    areas of law. Each member of our team is a specialist in their field, ensuring that you receive
-                    expert.</p>
+                  <div class="wcu-feature-title">
+                    <span data-ar>فريق متخصص</span>
+                    <span data-en style="display:none">Specialized Team</span>
+                  </div>
+                  <p class="wcu-feature-summary">
+                    <span data-ar>تجلب محامياتنا عقوداً من الخبرة المشتركة في مجالات متعددة من القانون. كل عضو في فريقنا متخصص في مجاله، مما يضمن حصولك على خبرة.</span>
+                    <span data-en style="display:none">Our attorneys bring decades of combined experience across multiple areas of law. Each member of our team is a specialist in their field, ensuring that you receive expert.</span>
+                  </p>
                 </div>
               </div>
               <div class="wcu-feature-item-one">
@@ -1069,9 +901,13 @@
                     </svg></div>
                 </div>
                 <div class="wcu-feature-content">
-                  <div class="wcu-feature-title">Strategic Legal Solutions</div>
-                  <p class="wcu-feature-summary">At Legality, we don't just offer legal advice; we provide strategic
-                    solutions. We take the time to analyze your situation, identify potential challenges, and develop.
+                  <div class="wcu-feature-title">
+                    <span data-ar>حلول قانونية استراتيجية</span>
+                    <span data-en style="display:none">Strategic Legal Solutions</span>
+                  </div>
+                  <p class="wcu-feature-summary">
+                    <span data-ar>في أسرة، لا نقدم مجرد نصائح قانونية؛ نحن نقدم حلولاً استراتيجية. نأخذ الوقت لتحليل وضعك وتحديد التحديات المحتملة وتطوير.</span>
+                    <span data-en style="display:none">At Legality, we don't just offer legal advice; we provide strategic solutions. We take the time to analyze your situation, identify potential challenges, and develop.</span>
                   </p>
                 </div>
               </div>
@@ -1089,23 +925,36 @@
               class="footer-logo-link-block w-inline-block"><img loading="lazy"
                 src="/img/usra-icon.png" alt="Usra Logo"
                 class="footer-logo"></a>
-            <p class="footer-address">Empowering Women with Expert Legal Guidance in Saudi Arabia</p>
+            <p class="footer-address">
+              <span data-ar>تمكين المرأة بالإرشاد القانوني الخبير في المملكة العربية السعودية</span>
+              <span data-en style="display:none">Empowering Women with Expert Legal Guidance in Saudi Arabia</span>
+            </p>
           </div>
           <div class="newsletter-main-wrapper">
-            <h2 class="newsletter-title">Stay Updated with Usra</h2>
+            <h2 class="newsletter-title">
+              <span data-ar>ابقِ محدثة مع أسرة</span>
+              <span data-en style="display:none">Stay Updated with Usra</span>
+            </h2>
             <div class="newsletter-form-block w-form">
               <form id="wf-newsletter-form" name="wf-form-Newsletter-Form" data-name="Newsletter Form" method="get"
                 class="newsletter-form" data-wf-page-id="67552aa51ab7c8348d591cb8"
                 data-wf-element-id="9531f09c-da7e-7ae9-85f2-c5cd3312a985"
                 data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e"><input class="newsletter-input-field w-input"
-                  maxlength="256" name="Newsletter-Email" data-name="Newsletter Email" placeholder="Enter your email..."
-                  type="email" id="Newsletter-Email" required=""><input type="submit" data-wait="Please wait..."
-                  class="our-newsletter-button w-button" value="Subscribe"></form>
+                  maxlength="256" name="Newsletter-Email" data-name="Newsletter Email" 
+                  placeholder="أدخلي بريدك الإلكتروني..." 
+                  type="email" id="Newsletter-Email" required=""><input type="submit" data-wait="يرجى الانتظار..."
+                  class="our-newsletter-button w-button" value="اشتراك"></form>
               <div class="w-form-done">
-                <div>Thank you! Your submission has been received!</div>
+                <div>
+                  <span data-ar>شكراً لك! تم استلام طلبك!</span>
+                  <span data-en style="display:none">Thank you! Your submission has been received!</span>
+                </div>
               </div>
               <div class="w-form-fail">
-                <div>Oops! Something went wrong while submitting the form.</div>
+                <div>
+                  <span data-ar>عذراً! حدث خطأ أثناء إرسال النموذج.</span>
+                  <span data-en style="display:none">Oops! Something went wrong while submitting the form.</span>
+                </div>
               </div>
             </div>
           </div>
@@ -1113,37 +962,82 @@
         <div class="footer-separator"></div>
         <div class="footer-middle-wrapper">
           <div class="footer-list-wrapper">
-            <h2 class="footer-list-title">Address</h2>
+            <h2 class="footer-list-title">
+              <span data-ar>العنوان</span>
+              <span data-en style="display:none">Address</span>
+            </h2>
             <ul role="list" class="footer-lists w-list-unstyled">
               <li class="footer-list-item">
-                <p class="footer-reach-out-span">Riyadh, Saudi Arabia</p>
+                <p class="footer-reach-out-span">
+                  <span data-ar>الرياض، المملكة العربية السعودية</span>
+                  <span data-en style="display:none">Riyadh, Saudi Arabia</span>
+                </p>
               </li>
             </ul>
           </div>
           <div class="footer-widget-wrapper">
             <div class="footer-widget-lists-wrapper">
               <div class="footer-list-wrapper">
-                <h2 class="footer-list-title">Quick Links</h2>
+                <h2 class="footer-list-title">
+                  <span data-ar>روابط سريعة</span>
+                  <span data-en style="display:none">Quick Links</span>
+                </h2>
                 <ul role="list" class="footer-lists w-list-unstyled">
-                  <li class="footer-list-item"><a href="home/home-v1.html" class="footer-list-link">Home</a></li>
-                  <li class="footer-list-item"><a href="about.html" class="footer-list-link">About Us</a></li>
-                  <li class="footer-list-item"><a href="service.html" class="footer-list-link">Services</a></li>
-                  <li class="footer-list-item"><a href="features.html" class="footer-list-link">Features</a></li>
-                  <li class="footer-list-item"><a href="contact.html" class="footer-list-link">Contact</a></li>
+                  <li class="footer-list-item"><a href="home/home-v1.html" class="footer-list-link">
+                    <span data-ar>الرئيسية</span>
+                    <span data-en style="display:none">Home</span>
+                  </a></li>
+                  <li class="footer-list-item"><a href="about.html" class="footer-list-link">
+                    <span data-ar>من نحن</span>
+                    <span data-en style="display:none">About Us</span>
+                  </a></li>
+                  <li class="footer-list-item"><a href="service.html" class="footer-list-link">
+                    <span data-ar>الخدمات</span>
+                    <span data-en style="display:none">Services</span>
+                  </a></li>
+                  <li class="footer-list-item"><a href="features.html" class="footer-list-link">
+                    <span data-ar>المميزات</span>
+                    <span data-en style="display:none">Features</span>
+                  </a></li>
+                  <li class="footer-list-item"><a href="contact.html" class="footer-list-link">
+                    <span data-ar>تواصل معنا</span>
+                    <span data-en style="display:none">Contact</span>
+                  </a></li>
                 </ul>
               </div>
               <div class="footer-list-wrapper">
-                <h2 class="footer-list-title">Policies & Licenses</h2>
+                <h2 class="footer-list-title">
+                  <span data-ar>السياسات والتراخيص</span>
+                  <span data-en style="display:none">Policies & Licenses</span>
+                </h2>
                 <ul role="list" class="footer-lists w-list-unstyled">
-                  <li class="footer-list-item"><a href="#" class="footer-list-link">Privacy Policy</a></li>
-                  <li class="footer-list-item"><a href="#" class="footer-list-link">Terms of Service</a></li>
-                  <li class="footer-list-item"><a href="#" class="footer-list-link">Cookie Policy</a></li>
-                  <li class="footer-list-item"><a href="template-info/licenses.html" class="footer-list-link">Licenses</a></li>
-                  <li class="footer-list-item"><a href="template-info/changelog.html" class="footer-list-link">Changelog</a></li>
+                  <li class="footer-list-item"><a href="#" class="footer-list-link">
+                    <span data-ar>سياسة الخصوصية</span>
+                    <span data-en style="display:none">Privacy Policy</span>
+                  </a></li>
+                  <li class="footer-list-item"><a href="#" class="footer-list-link">
+                    <span data-ar>شروط الخدمة</span>
+                    <span data-en style="display:none">Terms of Service</span>
+                  </a></li>
+                  <li class="footer-list-item"><a href="#" class="footer-list-link">
+                    <span data-ar>سياسة ملفات تعريف الارتباط</span>
+                    <span data-en style="display:none">Cookie Policy</span>
+                  </a></li>
+                  <li class="footer-list-item"><a href="template-info/licenses.html" class="footer-list-link">
+                    <span data-ar>التراخيص</span>
+                    <span data-en style="display:none">Licenses</span>
+                  </a></li>
+                  <li class="footer-list-item"><a href="template-info/changelog.html" class="footer-list-link">
+                    <span data-ar>سجل التغييرات</span>
+                    <span data-en style="display:none">Changelog</span>
+                  </a></li>
                 </ul>
               </div>
               <div class="footer-list-wrapper">
-                <h2 class="footer-list-title">Contact</h2>
+                <h2 class="footer-list-title">
+                  <span data-ar>تواصل معنا</span>
+                  <span data-en style="display:none">Contact</span>
+                </h2>
                 <ul role="list" class="footer-lists w-list-unstyled">
                   <li class="footer-list-item"><a href="mailto:info@usra.com"
                       class="footer-reach-out-link">info@usra.com</a></li>
@@ -1155,8 +1049,10 @@
         </div>
         <div class="footer-separator"></div>
         <div class="footer-bottom-wrapper">
-          <div class="footer-copyright">Copyright © <a href="home/home-v1.html"
-              class="footer-copyright-link">Usra</a> | Women Legal Consultancy Saudi Arabia</div>
+          <div class="footer-copyright">
+            <span data-ar>حقوق النشر © <a href="home/home-v1.html" class="footer-copyright-link">أسرة</a> | استشارات قانونية للمرأة في السعودية</span>
+            <span data-en style="display:none">Copyright © <a href="home/home-v1.html" class="footer-copyright-link">Usra</a> | Women Legal Consultancy Saudi Arabia</span>
+          </div>
           <div class="social-link-block"><a aria-label="Social Icon" title="Twitter" href="https://twitter.com/"
               target="_blank" class="social-single-link-block white-border w-inline-block">
               <div class="social-link-icon w-embed"><svg width="17" height="16" viewbox="0 0 17 16" fill="none"
@@ -1211,141 +1107,7 @@
   <script src="../673da037c557f00f71d570d7/js/webflow.f433b59691f70c07f68b76b480153083.js"
     type="text/javascript"></script>
   
-  <!-- Custom Menu Toggle Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuButton = document.querySelector('.menu-button-two');
-      const menuIcon = document.querySelector('.menu-icon');
-      const closeIcon = document.querySelector('.menu-close-icon');
-      const navMenu = document.querySelector('.nav-menu-wrapper-two');
-      
-      if (menuButton && menuIcon && closeIcon) {
-        menuButton.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          
-          // Toggle menu visibility
-          const isMenuOpen = navMenu.classList.contains('w--open');
-          
-          if (isMenuOpen) {
-            // Close menu
-            navMenu.classList.remove('w--open');
-            menuIcon.classList.remove('active');
-            closeIcon.classList.remove('active');
-            closeIcon.style.display = 'none';
-          } else {
-            // Open menu
-            navMenu.classList.add('w--open');
-            menuIcon.classList.add('active');
-            closeIcon.classList.add('active');
-            closeIcon.style.display = 'block';
-          }
-        });
-        
-        // Close menu when clicking on menu items
-        const menuLinks = document.querySelectorAll('.nav-link-block');
-        menuLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            navMenu.classList.remove('w--open');
-            menuIcon.classList.remove('active');
-            closeIcon.classList.remove('active');
-            closeIcon.style.display = 'none';
-          });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-          if (!menuButton.contains(event.target) && !navMenu.contains(event.target)) {
-            navMenu.classList.remove('w--open');
-            menuIcon.classList.remove('active');
-            closeIcon.classList.remove('active');
-            closeIcon.style.display = 'none';
-          }
-        });
-        
-        // Listen for Webflow's own menu state changes
-        const observer = new MutationObserver(function(mutations) {
-          mutations.forEach(function(mutation) {
-            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-              const isOpen = navMenu.classList.contains('w--open');
-              if (isOpen) {
-                menuIcon.classList.add('active');
-                closeIcon.classList.add('active');
-                closeIcon.style.display = 'block';
-              } else {
-                menuIcon.classList.remove('active');
-                closeIcon.classList.remove('active');
-                closeIcon.style.display = 'none';
-              }
-            }
-          });
-        });
-        
-        observer.observe(navMenu, {
-          attributes: true,
-          attributeFilter: ['class']
-        });
-      }
-    });
-  </script>
-  <script>
-    // ...existing scripts...
-    document.addEventListener('DOMContentLoaded', function() {
-      // Language Toggle Functionality
-      const langToggle = document.getElementById('lang-toggle');
-      const arBtn = langToggle.querySelector('.lang-ar');
-      const enBtn = langToggle.querySelector('.lang-en');
-      const slider = langToggle.querySelector('.lang-toggle-slider');
-      // Helper: show/hide language
-      function setLanguage(lang) {
-        document.documentElement.setAttribute('lang', lang === 'ar' ? 'ar' : 'en');
-        // Show/hide all data-ar/data-en
-        document.querySelectorAll('[data-ar], [data-en]').forEach(el => {
-          if (lang === 'ar') {
-            if (el.hasAttribute('data-ar')) {
-              el.style.display = '';
-            }
-            if (el.hasAttribute('data-en')) {
-              el.style.display = 'none';
-            }
-          } else {
-            if (el.hasAttribute('data-ar')) {
-              el.style.display = 'none';
-            }
-            if (el.hasAttribute('data-en')) {
-              el.style.display = '';
-            }
-          }
-        });
-        // Toggle active class
-        if (lang === 'ar') {
-          arBtn.classList.add('active');
-          enBtn.classList.remove('active');
-          slider.style.left = '3px';
-        } else {
-          arBtn.classList.remove('active');
-          enBtn.classList.add('active');
-          slider.style.left = 'calc(50% + 3px)';
-        }
-        // Always keep header ltr
-        document.querySelector('.header').setAttribute('dir', 'ltr');
-      }
-      // Default: Arabic
-      setLanguage('ar');
-      // Toggle click
-      langToggle.addEventListener('click', function() {
-        const isArabic = arBtn.classList.contains('active');
-        setLanguage(isArabic ? 'en' : 'ar');
-      });
-      // Keyboard accessibility
-      langToggle.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          langToggle.click();
-        }
-      });
-    });
-  </script>
+  <script src="./languageToggler.js"></script>
 </body>
 
 </html>

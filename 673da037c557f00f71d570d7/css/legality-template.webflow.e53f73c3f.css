@@ -4451,6 +4451,306 @@ figure {
   overflow: hidden;
 }
 
+ /* Fixed Header Styles */
+ .header.transparent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #D83F97;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid white;
+}
+
+/* Add padding to body to prevent content from hiding behind fixed header */
+body {
+  padding-top: 80px; /* Adjust this value based on your header height */
+}
+
+/* Ensure main content starts below the fixed header */
+.main-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* Menu Close Icon Styles */
+.menu-close-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-button-two {
+  position: relative;
+  cursor: pointer;
+  /* Ensure menu button is visible on all screen sizes */
+  display: block !important;
+  visibility: visible !important;
+}
+
+.menu-icon, .menu-close-icon {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-close-icon.active {
+  opacity: 1 !important;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.menu-icon.active {
+  opacity: 0 !important;
+  transform: rotate(-90deg);
+}
+
+/* Force display when active */
+.menu-close-icon.active {
+  display: block !important;
+}
+
+/* Ensure proper z-index */
+.menu-close-icon {
+  z-index: 10;
+}
+
+/* Hide menu button on desktop (full screen view) */
+@media (min-width: 1024px) {
+  .menu-button-two {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  .menu-close-icon {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  .menu-close-icon.active {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}
+
+/* Show menu button on tablet and mobile */
+@media (max-width: 1023px) {
+  .menu-button-two {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  
+  .menu-close-icon {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .menu-close-icon.active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Override any responsive hiding for menu button on mobile and tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .menu-button-two {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .menu-close-icon {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .menu-close-icon.active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Make close icon more prominent on tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .menu-close-icon svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+  .menu-close-icon.active svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+/* Ensure menu button is always clickable on mobile and tablet */
+.menu-button-two.w-nav-button {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Hide menu button on desktop */
+@media (min-width: 1024px) {
+  .menu-button-two.w-nav-button {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+.custom-download-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 640px) {
+  .custom-download-btns {
+    flex-direction: row;
+  }
+}
+.custom-btn {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.2rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-radius: 3.5rem;
+  box-shadow: 0 4px 24px 0 rgba(216,61,150,0.10);
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #D83D96;
+  text-decoration: none;
+  margin: 0;
+  background: #fff;
+  color: #D83D96;
+  position: relative;
+  overflow: hidden;
+}
+.custom-btn:hover, .custom-btn:focus {
+  background: #D83D96;
+  color: #fff;
+  border-color: #ffffff;
+  box-shadow: 0 8px 32px 0 rgba(216,61,150,0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+.custom-btn .btn-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-right: 0.25rem;
+  transition: transform 0.2s;
+}
+.custom-btn:hover .btn-icon, .custom-btn:focus .btn-icon {
+  transform: scale(1.15) rotate(-8deg);
+}
+.custom-btn .arrow-icon {
+  margin-left: 0.25rem;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+}
+.custom-btn:hover .arrow-icon, .custom-btn:focus .arrow-icon {
+  transform: translateX(6px);
+}
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  background: #fff;
+  border-radius: 2rem;
+  border: 2px solid #D83D96;
+  padding: 0.25rem 0.5rem;
+  position: relative;
+  width: 120px; /* Increased width for better fit */
+  height: 45px;
+  cursor: pointer;
+  transition: border 0.2s;
+  box-shadow: 0 2px 10px 0 rgba(216,61,150,0.08);
+  font-family: inherit;
+  font-size: 1rem;
+  user-select: none;
+  outline: none;
+}
+.lang-toggle:focus {
+  border: 2px solid #b71c6b;
+}
+.lang-toggle .lang-ar,
+.lang-toggle .lang-en {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center text in span */
+  padding: 0 0.75rem;
+  color: #D83D96;
+  font-weight: 700;
+  z-index: 2;
+  transition: color 0.2s;
+  position: relative;
+}
+.lang-toggle .lang-ar.active,
+.lang-toggle .lang-en.active {
+  color: #fff;
+}
+.lang-toggle .lang-toggle-slider {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 54px; /* Increased width for better fit */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  background: #D83D96;
+  border-radius: 2rem;
+  transition: left 0.3s cubic-bezier(0.4,0,0.2,1);
+  z-index: 1;
+}
+.lang-toggle .lang-ar.active ~ .lang-toggle-slider {
+  left: 3px;
+}
+.lang-toggle .lang-en.active ~ .lang-toggle-slider {
+  left: calc(50% + 3px);
+}
+.lang-toggle .lang-ar,
+.lang-toggle .lang-en {
+  transition: color 0.3s;
+}
+
+/* Show icon on desktop, hide logo */
+.nav-logo-icon { display: inline-block; }
+.nav-logo-full { display: none; }
+
+@media (max-width: 1023px) {
+  /* On tablet/mobile: show logo, hide icon */
+  .nav-logo-icon { display: none !important; }
+  .nav-logo-full { display: inline-block !important; }
+}
+
 .practice-gallery-image {
   border-radius: 8px;
   width: 100%;
@@ -6973,7 +7273,7 @@ figure {
   }
 
   .breadcrumb-wrapper {
-    padding-top: 180px;
+    padding-top: 94px;
   }
 
   .section-title.for-about {
@@ -7216,7 +7516,7 @@ figure {
     grid-column-gap: 90px;
     grid-row-gap: 90px;
     grid-template-columns: 1.1fr .9fr;
-    padding-top: 180px;
+    padding-top: 90px;
   }
 
   .about-breadcrumb-image-block {
