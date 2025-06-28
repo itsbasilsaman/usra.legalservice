@@ -1,4 +1,34 @@
-﻿html {
+﻿@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
+
+/* Apply Alexandria font to Arabic text */
+[data-ar] {
+  font-family: "Alexandria", sans-serif !important;
+}
+
+/* Apply Alexandria font to elements containing Arabic text */
+.nav-text [data-ar],
+.breadcrumb-title [data-ar],
+.breadcrumb-summary [data-ar],
+.section-title [data-ar],
+.section-summary [data-ar],
+.section-subtitle [data-ar],
+.about-feature-title [data-ar],
+.about-feature-summary [data-ar],
+.funfact-inner-title [data-ar],
+.funfact-summary [data-ar],
+.wcu-feature-title [data-ar],
+.wcu-feature-summary [data-ar],
+.footer-address [data-ar],
+.newsletter-title [data-ar],
+.footer-list-title [data-ar],
+.footer-list-link [data-ar],
+.footer-copyright [data-ar],
+.button-text [data-ar],
+.nav-text [data-ar] {
+  font-family: "Alexandria", sans-serif !important;
+}
+
+html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   font-family: sans-serif;
@@ -10153,136 +10183,204 @@ body {
   }
 
   .blog-author-wrapper {
-    grid-column-gap: 12px;
-    grid-row-gap: 12px;
-    width: calc(100% - 30px);
-    padding: 16px;
+    flex-flow: wrap;
   }
 
-  .blog-author-name {
-    font-size: 22px;
+  .landing-page-hero-image-wrapper {
+    margin-top: 40px;
+  }
+
+  .landing-page-blurry-block-one {
+    width: 220px;
+    height: 220px;
+    top: 0;
+  }
+
+  .landing-page-padding-bottom-160px {
+    padding-bottom: 60px;
+  }
+
+  .landing-page-core-features-shape-one {
+    width: 160px;
+    height: 160px;
   }
 
   .landing-page-footer-link-wrapper {
-    flex-wrap: wrap;
-    justify-content: center;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+
+  .landing-page-hero-padding-top {
+    padding-top: 100px;
   }
 
   .landing-page-hero-image {
-    max-width: 280px;
+    max-width: 400px;
   }
 
-  .landing-page-gradient-button {
-    width: 100%;
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
-
-  .landing-page-header-logo {
-    max-width: 170px;
-  }
-
-  .landing-page-template-showcase-tab-menu {
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
-    border-radius: 24px;
-    flex-flow: wrap;
-    width: 100%;
-    max-width: 340px;
-  }
-
-  .landing-page-header-button {
-    width: 100%;
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
-
-  .landing-page-footer-title {
-    font-size: 28px;
-  }
-
-  .landing-page-blurry-footer-block-one {
-    top: -60px;
-  }
-
-  .landing-page-nav-list-item {
-    text-align: left;
-    width: 100%;
-  }
-
-  .landing-page-nav-list-item.show-in-tablet {
-    justify-content: flex-start;
-    width: 100%;
-    display: flex;
-  }
-
-  .landing-page-cta-wrapper.landing-page-gradient {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-
-  .landing-page-footer-subtitle {
-    line-height: 1.3;
-  }
-
-  .landing-page-template-showcase-tab-link {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .landing-page-hero-title {
-    font-size: 28px;
-  }
-
-  .landing-page-core-features-shape-three {
-    left: 20px;
-  }
-
-  .landing-page-template-feature-variation-item.footer-styles {
-    padding: 20px 15px;
-  }
-
-  .attorney-detail-inner-content {
-    max-width: 100%;
-  }
-
-  .attorney-experience-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .attorney-skill-wrapper {
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    grid-template-columns: 1fr;
-  }
-
-  .menu-button-two {
-    padding: 6px;
-  }
-
-  .nav-menu-wrapper-two {
- 
-    padding: 45px 35px 20px;
-  }
-
-  .nav-menu-list-wrapper-two {
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
-    flex-direction: column;
-  }
-
-  .funfact-heading-block {
-    margin-bottom: 35px;
-  }
-
-  .hero-wrapper-two {
-    flex-flow: wrap;
-    grid-template-columns: 9fr;
+  .landing-page-padding-top-160px {
     padding-top: 60px;
   }
 
-  .featured-blog-title {
+  .landing-page-gradient-button {
+    padding: 20px 32px;
+  }
+
+  .landing-page-header-logo {
+    max-width: 220px;
+  }
+
+  .landing-page-template-showcase-tab-menu {
+    padding: 12px;
+  }
+
+  .landing-page-template-showcase-grid {
+    grid-template-columns: 1fr;
+    place-items: start center;
+  }
+
+  .landing-page-core-features-shape-two {
+    width: 260px;
+    height: 260px;
+  }
+
+  .landing-page-section-heading {
+    font-size: 26px;
+  }
+
+  .landing-page-header-button {
+    padding: 20px 32px;
+  }
+
+  .landing-page-footer-title {
+    font-size: 36px;
+  }
+
+  .landig-page-hero-image-marquee {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  .landing-page-request-figma-heading {
+    font-size: 26px;
+  }
+
+  .landing-page-mobile-device-image {
+    position: static;
+  }
+
+  .landing-page-footer-brand-wrapper {
+    flex-flow: wrap;
+  }
+
+  .landing-page-cta-wrapper.landing-page-gradient {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .landing-page-core-features-grid {
+    grid-template-columns: 1fr;
+    place-items: start center;
+  }
+
+  .landing-page-template-showcase-tab-link {
+    padding: 12px 20px;
+  }
+
+  .landing-page-section-heading-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .landing-page-hero-title {
+    font-size: 30px;
+  }
+
+  .landing-page-core-features-shape-three {
+    width: 280px;
+    height: 280px;
+    left: 100px;
+  }
+
+  .laning-page-template-feature-variation-block {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-page-blurry-block-two {
+    width: 280px;
+    height: 280px;
+  }
+
+  .primary-attorney-detail-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .team-info-detail ul {
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+  }
+
+  .attorney-profile-summary {
+    margin-top: 25px;
+    font-size: 20px;
+  }
+
+  .attorney-experience-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .secondary-attorney-detail-wrapper {
+    grid-column-gap: 35px;
+    grid-row-gap: 35px;
+    grid-template-columns: 1.15fr;
+  }
+
+  .menu-button-two {
+    padding: 8px;
+  }
+
+  .nav-menu-wrapper-two {
+  
+  }
+
+  .nav-menu-list-wrapper-two {
+    border-radius: 20px;
+    flex-direction: column;
+  }
+
+  .hero-bg {
+    background-position: 0%;
+  }
+
+  .funfact-heading-block {
+    margin-bottom: 45px;
+  }
+
+  .attorney-title-two {
     font-size: 22px;
+  }
+
+  .attorney-social-initial-icon {
+    width: 19px;
+    height: 20px;
+  }
+
+  .hero-wrapper-two {
+    grid-template-columns: 1fr;
+    padding-top: 82px;
+  }
+
+  .hero-summary-two {
+    margin-bottom: 30px;
+  }
+
+  .hero-scroll-down-block-two {
+    padding-top: 30px;
+    position: absolute;
+    inset: auto 30px 60px auto;
+  }
+
+  .featured-blog-title {
+    font-size: 26px;
   }
 }
 

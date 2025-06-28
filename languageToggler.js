@@ -101,6 +101,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     });
+    
+    // Handle form placeholders
+    document.querySelectorAll('[data-ar-placeholder], [data-en-placeholder]').forEach(el => {
+      if (lang === 'ar' && el.hasAttribute('data-ar-placeholder')) {
+        el.setAttribute('placeholder', el.getAttribute('data-ar-placeholder'));
+      } else if (lang === 'en' && el.hasAttribute('data-en-placeholder')) {
+        el.setAttribute('placeholder', el.getAttribute('data-en-placeholder'));
+      }
+    });
+    
+    // Handle button values
+    document.querySelectorAll('[data-ar-value], [data-en-value]').forEach(el => {
+      if (lang === 'ar' && el.hasAttribute('data-ar-value')) {
+        el.setAttribute('value', el.getAttribute('data-ar-value'));
+      } else if (lang === 'en' && el.hasAttribute('data-en-value')) {
+        el.setAttribute('value', el.getAttribute('data-en-value'));
+      }
+    });
+    
+    // Handle data-wait attributes for submit buttons
+    document.querySelectorAll('[data-wait]').forEach(el => {
+      if (lang === 'ar') {
+        el.setAttribute('data-wait', 'يرجى الانتظار...');
+      } else {
+        el.setAttribute('data-wait', 'Please wait...');
+      }
+    });
+    
+    // Handle select option text
+    document.querySelectorAll('option[data-ar-text], option[data-en-text]').forEach(el => {
+      if (lang === 'ar' && el.hasAttribute('data-ar-text')) {
+        el.textContent = el.getAttribute('data-ar-text');
+      } else if (lang === 'en' && el.hasAttribute('data-en-text')) {
+        el.textContent = el.getAttribute('data-en-text');
+      }
+    });
+    
     // Toggle active class
     if (lang === 'ar') {
       arBtn.classList.add('active');
