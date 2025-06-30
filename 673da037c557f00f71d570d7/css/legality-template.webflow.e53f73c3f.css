@@ -2819,6 +2819,19 @@ figure {
   padding-bottom: 7px;
 }
 
+
+/* Highlight current nav item */
+.nav-link-block.w--current {
+  background: #111;
+  color: #fff !important;
+  border-radius: 25px;
+  padding: 5px 12px;
+  transition: background 0.2s;
+}
+.nav-link-block.w--current .nav-text span {
+  color: #fff !important;
+}
+
 .button-icon {
   color: #fff;
   width: 10px;
@@ -4651,8 +4664,7 @@ body {
   margin-top: 1.5rem;
   width: 100%;
   max-width: 660px;
-  margin-left: auto;
-  margin-right: auto;
+ 
 }
 @media (min-width: 640px) {
   .custom-download-btns {
