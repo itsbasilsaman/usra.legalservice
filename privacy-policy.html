@@ -8,6 +8,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="../673da037c557f00f71d570d7/css/legality-template.webflow.e53f73c3f.css" rel="stylesheet">
     <link href="./img/usra-logo.png" rel="shortcut icon" type="image/x-icon">
+    <style>
+        /* Language Toggle Styles */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            background: #f3f4f6;
+            border-radius: 20px;
+            padding: 2px;
+            cursor: pointer;
+            position: relative;
+            width: 120px;
+            height: 32px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .lang-toggle .lang-ar,
+        .lang-toggle .lang-en {
+            flex: 1;
+            text-align: center;
+            padding: 6px 12px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .lang-toggle .lang-ar.active,
+        .lang-toggle .lang-en.active {
+            color: #d83d96;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .lang-toggle .lang-toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            width: calc(50% - 3px);
+            height: calc(100% - 4px);
+            background: white;
+            border-radius: 16px;
+            transition: left 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+        
+        .lang-toggle .lang-en.active ~ .lang-toggle-slider {
+            left: calc(50% + 3px);
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] .lang-toggle .lang-ar.active ~ .lang-toggle-slider {
+            left: calc(50% + 3px);
+        }
+        
+        [dir="rtl"] .lang-toggle .lang-en.active ~ .lang-toggle-slider {
+            left: 3px;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50">
@@ -20,9 +80,10 @@
                     <img src="/img/usra-logo.png" alt="Usra" class="w-12 h-12">
                 </a>
                 <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                    <div id="lang-toggle" class="flex items-center bg-gray-200 rounded-full p-1 cursor-pointer">
-                        <span class="lang-ar active px-3 py-1 rounded-full bg-white text-sm">العربية</span>
-                        <span class="lang-en px-3 py-1 rounded-full text-sm">En</span>
+                    <div id="lang-toggle" class="lang-toggle" aria-label="Language Switcher" tabindex="0">
+                        <span class="lang-ar active">العربية</span>
+                        <span class="lang-toggle-slider"></span>
+                        <span class="lang-en">En</span>
                     </div>
                     <a href="index.html" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">
                         <span data-ar>الرئيسية</span>
